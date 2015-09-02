@@ -1,0 +1,21 @@
+
+# ignore any zipped data if it exists
+*.zip
+# the misc dir was created specifically for files that don't need to be tracked
+misc/*
+#!misc/*.???
+
+#### R project stuff
+# History files
+.Rhistory
+.Rapp.history
+
+# Example code in package build process
+*-Ex.R
+
+# RStudio files
+.Rproj.user/
+
+# produced vignettes (for now, don't ignore these)
+#vignettes/*.html
+#vignettes/*.pdf
