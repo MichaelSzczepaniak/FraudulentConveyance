@@ -1,0 +1,3 @@
+The data in the rawOsMerchantReportsTxt dir were originally in Microsoft Word 2003 format but were individually exported to simple ASCII text files so they could be more easily read and processed.  The two files in the rawOsMerchantReportsPdf are included as examples in order to see what the original reports looked like.  These pdf files were created directly from the originally supplied Word docs and preserve their original formatting.
+
+The data in the these file were essential in determining both that fraud had been committed and later in assessing the extent of the fraud (determination of quanta).

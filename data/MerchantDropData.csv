@@ -1,4 +1,4 @@
-month,merchants.added,merchants.dropped,net.added.merchants,cummulative.merchants,monthly.drop.rate
+month,merchants_added,merchants_dropped,net_added.merchants,cummulative_merchants,monthly_drop.rate
 200401,174,,174,174,
 200402,14,12,2,176,6.9%
 200403,17,10,7,183,5.7%

@@ -1,0 +1,736 @@
+	To:	4U IMPRINTING	Contact: SANDRA MANOR, Phone: 705 560 5468, Fax:   
+	THE BIRTHDAY STORE, 1390 KINGSWAY 5	Time Zone:  Eastern Time 
+	SUDBURY, ON,  P3A 4R7
+	Merchant: 56P001   Site: 56P00101
+	Terminal: 56P10001
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/01	1	4	0	4	1	64.04	0.00	64.04	0.65	0.65	63.39
+	04/02	1	1	0	1	0	17.25	0.00	17.25	0.15	0.15	17.10
+	04/03	1	4	0	4	0	54.02	0.00	54.02	0.60	0.60	53.42
+	04/04	1	1	0	1	0	28.74	0.00	28.74	0.15	0.15	28.59
+	04/05	1	1	0	1	0	27.60	0.00	27.60	0.15	0.15	27.45
+	04/07	1	3	0	3	0	32.37	0.00	32.37	0.45	0.45	31.92
+	04/08	1	7	0	7	0	148.89	0.00	148.89	1.05	1.05	147.84
+	04/09	2	5	0	5	3	78.15	0.00	78.15	0.90	0.90	77.25
+	04/10	1	1	0	1	1	24.34	0.00	24.34	0.20	0.20	24.14
+	04/11	1	4	0	4	0	92.51	0.00	92.51	0.60	0.60	91.91
+	04/14	1	10	0	10	0	251.72	0.00	251.72	1.50	1.50	250.22
+	04/15	1	6	0	6	0	105.23	0.00	105.23	0.90	0.90	104.33
+	04/16	1	6	0	6	0	168.95	0.00	168.95	0.90	0.90	168.05
+	04/17	1	2	0	2	0	125.89	0.00	125.89	0.30	0.30	125.59
+	04/18	1	4	0	4	0	335.15	0.00	335.15	0.60	0.60	334.55
+	04/19	1	2	0	2	0	51.74	0.00	51.74	0.30	0.30	51.44
+	04/20	1	6	0	6	0	144.23	0.00	144.23	0.90	0.90	143.33
+	04/21	1	6	0	6	0	376.19	0.00	376.19	0.90	0.90	375.29
+	04/23	2	22	0	22	0	534.68	0.00	534.68	3.30	3.30	531.38
+	04/25	2	6	0	6	0	218.35	0.00	218.35	0.90	0.90	217.45
+	04/26	1	3	0	3	0	94.03	0.00	94.03	0.45	0.45	93.58
+	04/27	1	4	0	4	0	83.39	0.00	83.39	0.60	0.60	82.79
+	04/28	1	7	0	7	0	350.03	0.00	350.03	1.05	1.05	348.98
+	04/29	1	2	0	2	0	50.56	0.00	50.56	0.30	0.30	50.26
+	04/30	1	11	0	11	0	350.00	0.00	350.00	1.65	1.65	348.35
+	28	128	0	128	5	3,808.05	0.00	3,808.05	19.45	19.45	3,788.60
+
+	28	128	0	128	5	3,808.05	0.00	3,808.05	19.45	19.45	3,788.60
+
+
+
+	To:	M T ROOMS	Contact: LILLIAN NOEL, Phone: 519 754 4772, Fax:   
+	M T ROOMS, 97 COLBORNE STREET E	Time Zone:  Eastern Time 
+	BRANTFORD, ON,  N3T 2G4
+	Merchant: 56P002   Site: 56P00201
+	Terminal: 56P10002
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/05	1	2	0	2	2	11.53	0.00	11.53	0.30	0.30	11.23
+	04/06	1	3	0	3	1	284.50	0.00	284.50	0.35	0.35	284.15
+	04/07	1	1	0	1	0	121.25	0.00	121.25	0.10	0.10	121.15
+	04/09	1	4	0	4	0	135.20	0.00	135.20	0.40	0.40	134.80
+	04/12	1	1	0	1	0	86.25	0.00	86.25	0.10	0.10	86.15
+	04/13	1	1	0	1	0	86.25	0.00	86.25	0.10	0.10	86.15
+	04/16	1	1	0	1	0	26.75	0.00	26.75	0.10	0.10	26.65
+	04/18	1	2	0	2	0	222.35	0.00	222.35	0.20	0.20	222.15
+	04/21	1	1	0	1	0	10.35	0.00	10.35	0.10	0.10	10.25
+	04/29	1	1	0	1	0	90.00	0.00	90.00	0.10	0.10	89.90
+	10	17	0	17	3	1,074.43	0.00	1,074.43	1.85	1.85	1,072.58
+
+	10	17	0	17	3	1,074.43	0.00	1,074.43	1.85	1.85	1,072.58
+
+
+
+	To:	MAGIC NAILS	Contact: BON VAN LE, Phone: 519 352 2252, Fax:   
+	MAGIC NAILS, 659 GRAND AVE W	Time Zone:  Eastern Time 
+	CHATHAM, ON,  N7M 1E6
+	Merchant: 56P003   Site: 56P00301
+	Terminal: 56P10003
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/02	1	5	0	5	0	122.35	0.00	122.35	0.50	0.50	121.85
+	04/09	1	4	0	4	0	97.50	0.00	97.50	0.40	0.40	97.10
+	04/16	1	1	0	1	0	27.50	0.00	27.50	0.10	0.10	27.40
+	04/23	1	7	0	7	1	168.70	0.00	168.70	0.75	0.75	167.95
+	04/30	1	6	0	6	0	157.50	0.00	157.50	0.60	0.60	156.90
+	5	23	0	23	1	573.55	0.00	573.55	2.35	2.35	571.20
+
+	5	23	0	23	1	573.55	0.00	573.55	2.35	2.35	571.20
+
+
+
+	To:	CAMSHAR INVESTMENTS LTD	Contact: SHARON GRAY, Phone: 613 392 8977, Fax:   
+	CARMS POOL AND SPAS, 391 DUNDAS ST W	Time Zone:  Eastern Time 
+	TRENTON, ON,  K8V 3S4
+	Merchant: 56P004   Site: 56P00401
+	Terminal: 56P10004
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/02	1	4	0	4	2	42.43	0.00	42.43	0.50	0.50	41.93
+	04/04	1	1	0	1	0	56.35	0.00	56.35	0.10	0.10	56.25
+	04/08	1	3	0	3	0	46.00	0.00	46.00	0.30	0.30	45.70
+	04/09	1	1	0	1	0	50.60	0.00	50.60	0.10	0.10	50.50
+	04/12	1	1	0	1	0	54.57	0.00	54.57	0.10	0.10	54.47
+	04/13	1	1	0	1	0	38.47	0.00	38.47	0.10	0.10	38.37
+	04/14	1	2	0	2	0	31.63	0.00	31.63	0.20	0.20	31.43
+	04/15	1	1	0	1	0	6.90	0.00	6.90	0.10	0.10	6.80
+	04/16	1	5	0	5	0	107.36	0.00	107.36	0.50	0.50	106.86
+	04/18	1	3	0	3	0	56.93	0.00	56.93	0.30	0.30	56.63
+	04/19	1	2	0	2	0	49.28	0.00	49.28	0.20	0.20	49.08
+	04/20	1	2	0	2	0	70.50	0.00	70.50	0.20	0.20	70.30
+	04/22	1	2	0	2	0	340.98	0.00	340.98	0.20	0.20	340.78
+	04/23	1	4	0	4	0	294.63	0.00	294.63	0.40	0.40	294.23
+	04/27	1	2	0	2	0	172.55	0.00	172.55	0.20	0.20	172.35
+	04/29	2	6	0	6	0	298.72	0.00	298.72	0.60	0.60	298.12
+	04/30	1	3	0	3	0	156.18	0.00	156.18	0.30	0.30	155.88
+	18	43	0	43	2	1,874.08	0.00	1,874.08	4.40	4.40	1,869.68
+
+	18	43	0	43	2	1,874.08	0.00	1,874.08	4.40	4.40	1,869.68
+
+
+
+	To:	CHARLES BAGASAN	Contact: CHUCK BAGASAN, Phone: 519 442 5557, Fax:   
+	FLICKS MOVIES AND GAMES, 16 MECANIC STREET	Time Zone:  Eastern Time 
+	PARIS, ON,  N3L 1J9
+	Merchant: 56P005   Site: 56P00501
+	Terminal: 56P10005
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/08	1	4	0	4	2	20.37	0.60	19.77	0.58	0.58	19.19
+	04/10	1	0	1	1	0	30.52	1.50	29.02	0.12	0.12	28.90
+	04/11	1	1	0	1	0	27.20	0.15	27.05	0.12	0.12	26.93
+	04/12	1	1	0	1	0	16.93	0.15	16.78	0.12	0.12	16.66
+	04/13	1	1	0	1	0	23.27	0.15	23.12	0.12	0.12	23.00
+	04/14	1	1	0	1	0	4.65	0.15	4.50	0.12	0.12	4.38
+	04/15	1	2	0	2	0	26.81	0.30	26.51	0.24	0.24	26.27
+	04/16	1	6	0	6	0	78.78	0.90	77.88	0.72	0.72	77.16
+	04/17	1	5	1	6	0	94.50	2.25	92.25	0.72	0.72	91.53
+	04/19	1	1	0	1	0	6.15	0.15	6.00	0.12	0.12	5.88
+	04/20	1	2	0	2	0	12.52	0.30	12.22	0.24	0.24	11.98
+	04/21	1	1	0	1	0	6.15	0.15	6.00	0.12	0.12	5.88
+	04/23	1	9	0	9	0	86.87	1.35	85.52	1.08	1.08	84.44
+	04/24	1	9	0	9	0	86.19	1.35	84.84	1.08	1.08	83.76
+	04/25	1	7	0	7	0	69.76	1.05	68.71	0.84	0.84	67.87
+	04/26	2	8	0	8	0	110.92	1.20	109.72	0.96	0.96	108.76
+	04/28	1	1	1	2	0	40.82	1.65	39.17	0.24	0.24	38.93
+	04/29	1	2	0	2	0	51.30	0.30	51.00	0.24	0.24	50.76
+	04/30	1	6	1	7	0	117.10	2.40	114.70	0.84	0.84	113.86
+	20	67	4	71	2	910.81	16.05	894.76	8.62	8.62	886.14
+
+	20	67	4	71	2	910.81	16.05	894.76	8.62	8.62	886.14
+
+
+
+	To:	STUDIO 875 TANNING AND HA	Contact: 
+	STUDIO 875 TANNING AND HAIR DESIGN, 875 HAMILTON RD	Time Zone:  Eastern Time 
+	LONDON, ON,  N5Z 1V8
+	Merchant: 56P007   Site: 56P00701
+	Terminal: 56P10007
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/06	1	1	0	1	1	0.03	0.00	0.03	0.17	0.17	-0.14
+	04/07	1	1	0	1	0	4.26	0.00	4.26	0.12	0.12	4.14
+	04/08	1	8	0	8	0	205.03	0.00	205.03	0.96	0.96	204.07
+	04/09	1	8	0	8	0	236.51	0.00	236.51	0.96	0.96	235.55
+	04/10	1	3	0	3	0	133.00	0.00	133.00	0.36	0.36	132.64
+	04/11	2	9	0	9	0	262.86	0.00	262.86	1.08	1.08	261.78
+	04/12	1	3	0	3	0	166.77	0.00	166.77	0.36	0.36	166.41
+	04/13	1	6	0	6	0	121.10	0.00	121.10	0.72	0.72	120.38
+	04/14	1	6	0	6	0	200.75	0.00	200.75	0.72	0.72	200.03
+	04/15	1	6	0	6	0	357.28	0.00	357.28	0.72	0.72	356.56
+	04/17	1	1	0	1	0	32.09	0.00	32.09	0.12	0.12	31.97
+	04/18	1	3	0	3	0	84.16	0.00	84.16	0.36	0.36	83.80
+	04/19	1	4	0	4	0	119.21	0.00	119.21	0.48	0.48	118.73
+	04/20	1	6	0	6	0	100.82	0.00	100.82	0.72	0.72	100.10
+	04/21	1	11	0	11	0	273.06	0.00	273.06	1.32	1.32	271.74
+	04/22	1	5	0	5	0	177.04	0.00	177.04	0.60	0.60	176.44
+	04/23	1	5	0	5	0	130.00	0.00	130.00	0.60	0.60	129.40
+	04/25	1	4	0	4	0	67.27	0.00	67.27	0.48	0.48	66.79
+	04/26	1	3	0	3	0	86.96	0.00	86.96	0.36	0.36	86.60
+	04/27	1	4	0	4	0	84.17	0.00	84.17	0.48	0.48	83.69
+	04/28	1	8	0	8	0	208.97	0.00	208.97	0.96	0.96	208.01
+	04/29	1	4	0	4	0	83.45	0.00	83.45	0.48	0.48	82.97
+	04/30	1	4	0	4	0	157.40	0.00	157.40	0.48	0.48	156.92
+	24	113	0	113	1	3,292.19	0.00	3,292.19	13.61	13.61	3,278.58
+
+	24	113	0	113	1	3,292.19	0.00	3,292.19	13.61	13.61	3,278.58
+
+
+
+	To:	1335006 ONTARIO LTD	Contact: REGAN STOCCO, Phone: 519 822 4363, Fax:   
+	UNIVERSITY SQUARE BAKERY AND DELI, 11 987 GORDON STREET	Time Zone:  Eastern Time 
+	GUELPH, ON,  N1G 4W3
+	Merchant: 56P008   Site: 56P00801
+	Terminal: 56P10008
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/01	1	9	0	9	1	64.22	0.00	64.22	1.13	1.13	63.09
+	04/02	1	30	0	30	0	382.64	0.00	382.64	3.60	3.60	379.04
+	04/03	1	19	0	19	0	302.17	0.00	302.17	2.28	2.28	299.89
+	04/04	1	21	0	21	0	391.70	0.00	391.70	2.52	2.52	389.18
+	04/05	1	23	0	23	0	334.65	0.00	334.65	2.76	2.76	331.89
+	04/06	1	23	0	23	1	237.48	0.00	237.48	2.81	2.81	234.67
+	04/07	1	14	0	14	1	240.26	0.00	240.26	1.73	1.73	238.53
+	04/08	1	18	0	18	1	274.32	0.00	274.32	2.21	2.21	272.11
+	04/09	1	27	0	27	1	460.10	0.00	460.10	3.29	3.29	456.81
+	04/10	1	40	0	40	0	687.60	0.00	687.60	4.80	4.80	682.80
+	04/11	1	27	0	27	2	357.37	0.00	357.37	3.34	3.34	354.03
+	04/12	1	16	0	16	2	226.92	0.00	226.92	2.02	2.02	224.90
+	04/13	1	17	0	17	0	187.76	0.00	187.76	2.04	2.04	185.72
+	04/14	1	19	0	19	0	265.63	0.00	265.63	2.28	2.28	263.35
+	04/15	1	21	0	21	0	293.07	0.00	293.07	2.52	2.52	290.55
+	04/16	1	24	0	24	0	384.40	0.00	384.40	2.88	2.88	381.52
+	04/17	1	31	0	31	0	449.02	0.00	449.02	3.72	3.72	445.30
+	04/18	1	18	0	18	0	236.64	0.00	236.64	2.16	2.16	234.48
+	04/19	1	19	0	19	1	212.65	0.00	212.65	2.33	2.33	210.32
+	04/20	1	17	0	17	0	212.28	0.00	212.28	2.04	2.04	210.24
+	04/21	1	24	0	24	0	288.53	0.00	288.53	2.88	2.88	285.65
+	04/22	1	14	0	14	0	202.15	0.00	202.15	1.68	1.68	200.47
+	04/23	1	37	0	37	0	635.35	0.00	635.35	4.44	4.44	630.91
+	04/24	1	36	0	36	0	578.36	0.00	578.36	4.32	4.32	574.04
+	04/25	1	26	0	26	0	424.16	0.00	424.16	3.12	3.12	421.04
+	04/26	1	11	0	11	0	120.00	0.00	120.00	1.32	1.32	118.68
+	04/27	1	23	0	23	1	324.03	0.00	324.03	2.81	2.81	321.22
+	04/28	1	20	0	20	0	238.77	0.00	238.77	2.40	2.40	236.37
+	04/29	1	22	0	22	1	336.35	0.00	336.35	2.69	2.69	333.66
+	04/30	1	28	0	28	0	358.13	0.00	358.13	3.36	3.36	354.77
+	30	674	0	674	12	9,706.71	0.00	9,706.71	81.48	81.48	9,625.23
+
+	30	674	0	674	12	9,706.71	0.00	9,706.71	81.48	81.48	9,625.23
+
+
+
+	To:	SPOTLESS PAWS	Contact: STEWART MCMULLEN, Phone: 519 852 7297, Fax:   
+	SPOTLESS PAWS, 111 MT PLEASANT AVE	Time Zone:  Eastern Time 
+	LONDON, ON,  N6H 1E1
+	Merchant: 56P009   Site: 56P00901
+	Terminal: 56P10009
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/20	1	3	0	3	1	90.03	0.00	90.03	0.35	0.35	89.68
+	04/22	1	3	0	3	0	156.90	0.00	156.90	0.30	0.30	156.60
+	04/23	1	1	0	1	0	36.00	0.00	36.00	0.10	0.10	35.90
+	04/25	1	2	0	2	0	65.00	0.00	65.00	0.20	0.20	64.80
+	04/28	1	2	0	2	1	45.10	0.00	45.10	0.25	0.25	44.85
+	5	11	0	11	2	393.03	0.00	393.03	1.20	1.20	391.83
+
+	5	11	0	11	2	393.03	0.00	393.03	1.20	1.20	391.83
+
+
+
+	To:	THE BIG WHEEL RESTAURANT	Contact: JOAN KILPATRICK, Phone: 705 378 1827, Fax:   
+	THE BIG WHEEL RESTAURANT AND MOTEL, 1355 AB HWY 69 S RR 2	Time Zone:  Eastern Time 
+	PARRY SOUND, ON,  P2A 2W8
+	Merchant: 56P013   Site: 56P01301
+	Terminal: 56P10013
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/14	1	5	0	5	0	86.08	0.00	86.08	0.50	0.50	85.58
+	04/25	1	9	0	9	0	235.28	0.00	235.28	0.90	0.90	234.38
+	04/30	1	3	0	3	0	98.30	0.00	98.30	0.30	0.30	98.00
+	3	17	0	17	0	419.66	0.00	419.66	1.70	1.70	417.96
+
+	3	17	0	17	0	419.66	0.00	419.66	1.70	1.70	417.96
+
+
+
+	To:	4U IMPRINTING	Contact: SANDRA MANOR, Phone: 705 560 5468, Fax:   
+	4 U IMPRINTING, 1349 LA SALLE BLVD	Time Zone:  Eastern Time 
+	SUDBURY, ON,  P3A 1Z2
+	Merchant: 56P001   Site: 56P00102
+	Terminal: 56P10014
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/08	1	2	0	2	1	66.67	0.00	66.67	0.35	0.35	66.32
+	04/09	1	16	0	16	1	509.08	0.00	509.08	2.45	2.45	506.63
+	04/10	1	11	0	11	0	358.12	0.00	358.12	1.65	1.65	356.47
+	04/11	1	2	0	2	0	102.30	0.00	102.30	0.30	0.30	102.00
+	04/12	1	7	0	7	0	174.87	0.00	174.87	1.05	1.05	173.82
+	04/13	1	12	0	12	1	260.74	0.00	260.74	1.85	1.85	258.89
+	04/14	1	8	0	8	0	425.32	0.00	425.32	1.20	1.20	424.12
+	04/15	1	9	0	9	0	249.71	0.00	249.71	1.35	1.35	248.36
+	04/16	1	13	0	13	0	329.91	0.00	329.91	1.95	1.95	327.96
+	04/17	1	4	0	4	0	108.06	0.00	108.06	0.60	0.60	107.46
+	04/18	1	7	0	7	0	198.91	0.00	198.91	1.05	1.05	197.86
+	04/19	1	2	0	2	0	42.54	0.00	42.54	0.30	0.30	42.24
+	04/20	1	3	0	3	0	95.75	0.00	95.75	0.45	0.45	95.30
+	04/21	1	6	0	6	0	132.55	0.00	132.55	0.90	0.90	131.65
+	04/22	1	8	0	8	0	220.74	0.00	220.74	1.20	1.20	219.54
+	04/23	1	12	0	12	0	353.47	0.00	353.47	1.80	1.80	351.67
+	04/24	1	9	0	9	0	226.80	0.00	226.80	1.35	1.35	225.45
+	04/25	1	5	0	5	0	115.14	0.00	115.14	0.75	0.75	114.39
+	04/26	1	3	0	3	2	82.77	0.00	82.77	0.55	0.55	82.22
+	04/27	1	4	0	4	0	90.83	0.00	90.83	0.60	0.60	90.23
+	04/28	1	5	0	5	0	105.29	0.00	105.29	0.75	0.75	104.54
+	04/30	1	11	0	11	1	325.02	0.00	325.02	1.70	1.70	323.32
+	22	159	0	159	6	4,574.59	0.00	4,574.59	24.15	24.15	4,550.44
+
+	22	159	0	159	6	4,574.59	0.00	4,574.59	24.15	24.15	4,550.44
+
+
+
+	To:	THE PET SUPPLY COMPANY	Contact: KATHY LOWE, Phone: 705 869 0093, Fax:   
+	THE PET SUPPLY COMPANY, 120 TUDHOPE STREET	Time Zone:  Eastern Time 
+	ESPANOLA, ON,  P5E 1S6
+	Merchant: 56P015   Site: 56P01501
+	Terminal: 56P10016
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/23	1	5	0	5	2	88.50	0.00	88.50	0.70	0.70	87.80
+	04/25	1	2	0	2	0	62.13	0.00	62.13	0.24	0.24	61.89
+	04/26	1	1	0	1	0	18.62	0.00	18.62	0.12	0.12	18.50
+	04/27	1	4	0	4	0	92.10	0.00	92.10	0.48	0.48	91.62
+	04/28	1	7	0	7	0	168.52	0.00	168.52	0.84	0.84	167.68
+	04/29	1	3	0	3	0	89.16	0.00	89.16	0.36	0.36	88.80
+	6	22	0	22	2	519.03	0.00	519.03	2.74	2.74	516.29
+
+	6	22	0	22	2	519.03	0.00	519.03	2.74	2.74	516.29
+
+
+
+	To:	BUCKO	Contact: HOUMESH RAMKISSOON, Phone: 905 528 0003, Fax:   
+	BUCKO, 1044 KING ST W	Time Zone:  Eastern Time 
+	HAMILTON, ON,  L8S 1L5
+	Merchant: 56P016   Site: 56P01601
+	Terminal: 56P10017
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/08	2	8	0	8	2	66.28	0.00	66.28	0.90	0.90	65.38
+	04/09	3	7	0	7	0	48.33	0.00	48.33	0.70	0.70	47.63
+	04/13	1	9	0	9	0	78.59	0.00	78.59	0.90	0.90	77.69
+	04/18	1	17	0	17	0	139.15	0.00	139.15	1.70	1.70	137.45
+	04/22	1	11	0	11	2	88.31	0.00	88.31	1.20	1.20	87.11
+	8	52	0	52	4	420.66	0.00	420.66	5.40	5.40	415.26
+
+	8	52	0	52	4	420.66	0.00	420.66	5.40	5.40	415.26
+
+
+
+	To:	PERFECT SHOE REPAIR	Contact: NIKOKAI POPOVITCH, Phone: 519 938 8291, Fax:   
+	PERFECT SHOE REPAIR, 150 MAIN ST	Time Zone:  Eastern Time 
+	ORANGEVILLE, ON,  L9W 3T7
+	Merchant: 56P018   Site: 56P01801
+	Terminal: 56P10019
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/08	2	2	0	2	2	0.22	0.20	0.02	0.30	0.30	-0.28
+	04/09	1	8	0	8	1	166.65	0.80	165.85	0.85	0.85	165.00
+	04/12	1	6	0	6	0	117.17	0.60	116.57	0.60	0.60	115.97
+	04/14	1	8	0	8	1	244.14	0.80	243.34	0.85	0.85	242.49
+	04/23	1	26	0	26	0	477.92	2.60	475.32	2.60	2.60	472.72
+	04/30	1	27	0	27	1	787.91	2.70	785.21	2.75	2.75	782.46
+	7	77	0	77	5	1,794.01	7.70	1,786.31	7.95	7.95	1,778.36
+
+	7	77	0	77	5	1,794.01	7.70	1,786.31	7.95	7.95	1,778.36
+
+
+
+	To:	993168 ONTARIO INC	Contact: YOUNG KI KIM, Phone: 905 851 8860, Fax:   
+	YOUNGS CLEANERS, 8401 WESTON RD UNIT 11	Time Zone:  Eastern Time 
+	WOODBRIDGE, ON,  L4L 1A6
+	Merchant: 56P020   Site: 56P02001
+	Terminal: 56P10021
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/28	1	1	0	1	1	0.01	0.00	0.01	0.20	0.20	-0.19
+	1	1	0	1	1	0.01	0.00	0.01	0.20	0.20	-0.19
+
+
+
+	To:	FRIDAYS PITA BAKERY INC	Contact: JOMAA ABOUZEENNI, Phone: 519 435 1661, Fax:   
+	FRIDAYS PITA BAKERY INC, 332 WELLINGTON RD	Time Zone:  Eastern Time 
+	LONDON, ON,  N6C 4P6
+	Merchant: 56P021   Site: 56P02101
+	Terminal: 56P10022
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/25	1	22	0	22	1	264.28	0.00	264.28	2.25	2.25	262.03
+	1	22	0	22	1	264.28	0.00	264.28	2.25	2.25	262.03
+
+
+
+	To:	LINKERT AUTO REPAIRS INC	Contact: ROBERT LINKERT, Phone: 705 292 6574, Fax:   
+	LINKERT AUTO REPAIRS INC, 2530 CHEMONG ROAD	Time Zone:  Eastern Time 
+	PETERBOROUGH, ON,  K9J 6X2
+	Merchant: 56P022   Site: 56P02201
+	Terminal: 56P10023
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/27	1	4	0	4	2	502.46	1.00	501.46	0.50	0.50	500.96
+	04/29	2	5	0	5	0	1,083.83	1.25	1,082.58	0.50	0.50	1,082.08
+	3	9	0	9	2	1,586.29	2.25	1,584.04	1.00	1.00	1,583.04
+
+	3	9	0	9	2	1,586.29	2.25	1,584.04	1.00	1.00	1,583.04
+
+
+
+	To:	MAID MARIONS COUNTRY KITC	Contact: JANICE MARION, Phone: 905 355 5777, Fax:   
+	MAID MARIONS COUNTRY KITCHEN, 24 KING STREET	Time Zone:  Eastern Time 
+	COLBORNE, ON,  K0K 1S0
+	Merchant: 56P023   Site: 56P02301
+	Terminal: 56P10024
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/24	1	24	0	24	2	444.92	0.00	444.92	2.50	2.50	442.42
+	1	24	0	24	2	444.92	0.00	444.92	2.50	2.50	442.42
+
+
+
+	To:	RAPT IN AWE ENT	Contact: WAYNE J MARDLING, Phone: 519 354 7090, Fax:   
+	STUDIO 25, 25 PARK AVE E	Time Zone:  Eastern Time 
+	CHATHAM, ON,  N7M 3V3
+	Merchant: 56P025   Site: 56P02501
+	Terminal: 56P10026
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/18	1	5	0	5	1	246.50	0.00	246.50	0.65	0.65	245.85
+	04/22	1	2	0	2	0	98.50	0.00	98.50	0.24	0.24	98.26
+	04/23	1	1	0	1	0	158.00	0.00	158.00	0.12	0.12	157.88
+	04/29	1	4	0	4	0	266.70	0.00	266.70	0.48	0.48	266.22
+	4	12	0	12	1	769.70	0.00	769.70	1.49	1.49	768.21
+
+	4	12	0	12	1	769.70	0.00	769.70	1.49	1.49	768.21
+
+
+
+	To:	NEEDFULL THINGS	Contact: ANGIE WILLIAMS, Phone: 705 569 0803, Fax:   
+	NEEDFULL THINGS, 305 SYROID ST	Time Zone:  Eastern Time 
+	ESPANOLA, ON,  P5E 1G7
+	Merchant: 56P027   Site: 56P02701
+	Terminal: 56P10028
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/25	1	3	0	3	3	33.02	0.30	32.72	0.45	0.45	32.27
+	04/29	1	1	0	1	0	7.08	0.15	6.93	0.10	0.10	6.83
+	04/30	1	1	0	1	0	26.51	0.00	26.51	0.10	0.10	26.41
+	3	5	0	5	3	66.61	0.45	66.16	0.65	0.65	65.51
+
+	3	5	0	5	3	66.61	0.45	66.16	0.65	0.65	65.51
+
+
+
+	To:	EVOLUTION EARTH FRIENDLY	Contact: ADAM CHAPLIN, Phone: 905 967 1142, Fax:   
+	EVOLUTION, 150 MAIN ST S	Time Zone:  Eastern Time 
+	NEWMARKET, ON,  L3Y 3Z1
+	Merchant: 56P028   Site: 56P02801
+	Terminal: 56P10029
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/26	1	1	0	1	2	0.20	0.00	0.20	0.25	0.25	-0.05
+	04/27	1	6	0	6	0	511.00	0.00	511.00	0.90	0.90	510.10
+	2	7	0	7	2	511.20	0.00	511.20	1.15	1.15	510.05
+
+	2	7	0	7	2	511.20	0.00	511.20	1.15	1.15	510.05
+
+
+
+	To:	DAISY MAYS	Contact: ROSEMARIE SMALE, Phone: 519 348 0354, Fax:   
+	DAISY MAYS, 240 GRAFF AVENUE	Time Zone:  Eastern Time 
+	STRATFORD, ON,  N5A 6Y2
+	Merchant: 56P032   Site: 56P03201
+	Terminal: 56P10033
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/23	1	2	0	2	2	0.29	0.20	0.09	0.30	0.30	-0.21
+	04/24	1	4	0	4	0	70.15	0.10	70.05	0.40	0.40	69.65
+	04/29	2	14	0	14	0	200.30	0.10	200.20	1.40	1.40	198.80
+	04/30	1	5	0	5	0	109.88	0.00	109.88	0.50	0.50	109.38
+	5	25	0	25	2	380.62	0.40	380.22	2.60	2.60	377.62
+
+	5	25	0	25	2	380.62	0.40	380.22	2.60	2.60	377.62
+
+
+
+	To:	PAYTONS CLOSET	Contact: VANESSA VAN RAAK, Phone: 905 355 5782, Fax:   
+	PAYTONS CLOSET, 23 KING STREET	Time Zone:  Eastern Time 
+	COLBORNE, ON,  K0K 1S0
+	Merchant: 56P033   Site: 56P03301
+	Terminal: 56P10034
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/22	1	3	0	3	1	50.85	0.00	50.85	0.35	0.35	50.50
+	04/23	1	3	0	3	0	175.61	0.00	175.61	0.30	0.30	175.31
+	04/26	1	2	0	2	0	98.81	0.00	98.81	0.20	0.20	98.61
+	04/27	1	1	0	1	0	70.97	0.00	70.97	0.10	0.10	70.87
+	4	9	0	9	1	396.24	0.00	396.24	0.95	0.95	395.29
+
+	4	9	0	9	1	396.24	0.00	396.24	0.95	0.95	395.29
+
+
+
+	To:	HORSE AND BUGGY FAMILY RE	Contact: MARKUS AMGWERD, Phone: 519 595 4113, Fax:   
+	HORSE AND BUGGY FAMILY RESTAURANT, 17 MAIN ST S	Time Zone:  Eastern Time 
+	MILVERTON, ON,  N0K 1M0
+	Merchant: 56P034   Site: 56P03401
+	Terminal: 56P10035
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/25	1	5	0	5	2	160.83	0.00	160.83	0.70	0.70	160.13
+	04/27	1	5	0	5	0	97.64	0.00	97.64	0.60	0.60	97.04
+	04/28	1	3	0	3	0	79.68	0.00	79.68	0.36	0.36	79.32
+	04/29	1	2	0	2	0	18.83	0.00	18.83	0.24	0.24	18.59
+	04/30	1	3	0	3	0	49.04	0.00	49.04	0.36	0.36	48.68
+	5	18	0	18	2	406.02	0.00	406.02	2.26	2.26	403.76
+
+	5	18	0	18	2	406.02	0.00	406.02	2.26	2.26	403.76
+
+
+
+	To:	MTM CHINESE FOOD RESTAURA	Contact: MEI TAN, Phone: 905 318 1238, Fax:   
+	MTM CHINESE FOOD RESTAURANT, 1070 STONECHURCH ROAD E	Time Zone:  Eastern Time 
+	HAMILTON, ON,  L8W 3K8
+	Merchant: 56P035   Site: 56P03501
+	Terminal: 56P10036
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/21	1	1	0	1	1	0.01	0.00	0.01	0.15	0.15	-0.14
+	04/26	1	8	0	8	0	231.79	0.00	231.79	0.80	0.80	230.99
+	2	9	0	9	1	231.80	0.00	231.80	0.95	0.95	230.85
+
+	2	9	0	9	1	231.80	0.00	231.80	0.95	0.95	230.85
+
+
+
+	To:	BEADY 1	Contact: ALISON SAVAGE, Phone: 905 287 0043, Fax:   
+	BEADY 1, 7C 2441 LAKESHORE RD W	Time Zone:  Eastern Time 
+	OAKVILLE, ON,  L6L 5V5
+	Merchant: 56P036   Site: 56P03601
+	Terminal: 56P10037
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/30	1	2	0	2	1	13.77	0.00	13.77	0.25	0.25	13.52
+	1	2	0	2	1	13.77	0.00	13.77	0.25	0.25	13.52
+
+
+
+	To:	RAINBOW DRY CLEANERS	Contact: MARK KAGIANIS, Phone: 905 318 0282, Fax:   
+	RAINBOW DRY CLEANERS, 1080 STONECHURCH RD E 37	Time Zone:  Eastern Time 
+	HAMILTON, ON,  L8W 3K8
+	Merchant: 56P038   Site: 56P03801
+	Terminal: 56P10039
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/22	1	1	0	1	1	7.49	0.00	7.49	0.15	0.15	7.34
+	04/23	1	11	0	11	0	203.92	0.00	203.92	1.10	1.10	202.82
+	04/25	1	2	0	2	0	82.57	0.00	82.57	0.20	0.20	82.37
+	04/26	1	1	0	1	0	22.79	0.00	22.79	0.10	0.10	22.69
+	04/27	1	3	0	3	0	156.92	0.00	156.92	0.30	0.30	156.62
+	04/28	1	6	0	6	0	357.22	0.00	357.22	0.60	0.60	356.62
+	04/29	1	8	0	8	1	281.26	0.00	281.26	0.85	0.85	280.41
+	04/30	1	9	0	9	2	422.14	0.00	422.14	1.00	1.00	421.14
+	8	41	0	41	4	1,534.31	0.00	1,534.31	4.30	4.30	1,530.01
+
+	8	41	0	41	4	1,534.31	0.00	1,534.31	4.30	4.30	1,530.01
+
+
+
+	To:	1213758 ONTARIO LTD	Contact: GHASSAN KASHAT, Phone: 905 455 0400, Fax:   
+	SHERIDAN CONVENIENCE, UNIT 18 TO 19 545 STEELES AVE	Time Zone:  Eastern Time 
+	BRAMPTON, ON,  L6Y 4E7
+	Merchant: 56P054   Site: 56P05401
+	Terminal: 56P10055
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/29	1	1	0	1	3	0.11	0.10	0.01	0.25	0.25	-0.24
+	1	1	0	1	3	0.11	0.10	0.01	0.25	0.25	-0.24
+
+
+
+	To:	GUELPH SHOES LTD	Contact: TONY DE CRISTOFANA, Phone: 519 821 0269, Fax:   
+	BAG IT, 46 QUEBEC ST	Time Zone:  Eastern Time 
+	GUELPH, ON,  N1H 2T4
+	Merchant: 56P058   Site: 56P05801
+	Terminal: 56P10059
+
+	DAILY SETTLEMENT
+	Date	# of Batches	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+
+	04/28	1	1	0	1	1	0.01	0.00	0.01	0.15	0.15	-0.14
+	1	1	0	1	1	0.01	0.00	0.01	0.15	0.15	-0.14
+
+
+
+
+	# Complete	# Complete	Total #	Total #	Total $	Total $	Purchase 
+	Haulage Fee	Haulage Fee	Merchant
+
+	IDP Only	IDP+Cashbk	Complete	Incomplete	Approved	User Fee	 Less User Fee	 Owing	Collected Daily	Settlement
+	Daily Settlement Totals:
+	Daily Merchants	1,589	4	1,593	72	35,966.69	26.95	35,939.74	0.00	195.85	35,743.89
+	Monthly Merchants	0	0	0	0	0.00	0.00*	0.00	0.00	0.00	0.00
+
+	Daily Grand Totals:	1,589	4	1,593	72	35,966.69	26.95	35,939.74	0.00	195.85	35,743.89
+
+	Monthly Totals To Be Paid/Collected:	0.00	0.00
+	Grand Total:	26.95	195.85
+
+	* User fees (to be collected monthly) were deducted from approved transaction, but not paid out
+
+	Sales Organization	 Month-to-Date Financial Totals by Terminal
+
+
+	POS027
+	Terminal Settlement Date From:Apr. 01, 2005  To: Apr. 30, 2005	Date: 5/1/05
+	Sales Organization: 56P CANADA BANKCARD SYSTEMS 2
+
+
+
+
+
+
