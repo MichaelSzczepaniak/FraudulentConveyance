@@ -13,15 +13,16 @@ dateToken = "Date"
 
 def main():
     """ Iterates through data dir, reads each OS monthly merchant report file,
-    parses that file into an OsMerchant object, and then stores it into a
-    database
+    parses that file into OsMerchant objects, and then persists those objects
+    into a database.  The path to the data dir needs to passed as the first
+    argument. For example:
     
     run OsMerchantParser.py ../data/rawOsMerchantReportsTxt/
     
     """
-    data_dir = sys.argv[1]
+    data_dir = sys.argv[1]  # first arg should be path to data dir
     data_files = os.listdir(data_dir)
-    for i in range(2): #len(data_files)):
+    for i in range(1): #len(data_files)):
         file = data_files[i]
         try:
             path = data_dir + file
@@ -31,31 +32,109 @@ def main():
             print(path, "not found! Exiting.")
             sys.exit(0)
         lines = f.readlines()
-        # Get all the raw records in this monthly report file
-        records = getRawMerchantRecords(lines)
-        print('i =', i, ", record count =", len(records))
-        # quick test
-        # To:	NCE NEW CANASIAN ENT INC	Contact: CHRIS GREEN, Phone: 613-722-7797, Fax:
-        print("1st record, 1st line:", records[0][0]) 
-        # MILLENNIUM VARIETY, 1405 OTTAWA ST N
-        print("3rd record, 2st line:", records[2][1])
-        # Merchant: 07P045          Site:   07P04501
-        print("4th record, 4th line:", records[3][3])
-                
-                
+        if i == 0:
+            testGetRawMerchantRecords(lines)
+        raw_merchants = getRawMerchantRecords(lines)
+        # parse raw merchants in merchant objects that can be persisted
+        parsed_merchants = parseRawMerchants(raw_merchants)
+        
+def parseRawMerchants(rawMerchants):
+    
+    
+    
+    return rawMerchants
+        
 def getRawMerchantRecords(lines):
+    """ Parses a list of strings into another list of strings where each
+    inner list are lines related to individual merchants.
+    
+    lines - list of strings containing information on a set of merchants
+            for a given month
+    
+    Precondition: It's assumed that each merchant record starts with a line:
+    To: <merchant name>
+    and ends with 3 consecutive blank lines.
+    
+    """
     raw_records = []
     record = []
+    build_record = False
+    blank_lines = 0
+    print("getRawMerchantRecords: number of lines = ", len(lines))
     for i in range(len(lines)):
         line = lines[i].strip()  # Remove leading white space
         if line.startswith(toToken):
-            if len(record) > 0:
-                raw_records.append(record)  # Add prior record
-            record = [line, ]  # First line of new record
-        else:
+            build_record = True
+            record = [line, ]    # Add first line of new record
+        elif len(line.strip()) < 1:      # At a blank line?
+            blank_lines += 1
+            # Last line of current record?
+            if blank_lines >= 3:
+                if build_record:
+                    raw_records.append(record[:])
+                    build_record = False
+                    blank_lines = 0
+        elif build_record:
             record.append(line)
+            blank_lines = 0
             
     return raw_records
+    
+def testGetRawMerchantRecords(lines):
+    # Get all the raw records in this monthly report file
+    records = getRawMerchantRecords(lines)
+    record_count = len(records)
+    print("\n>>> testGetRawMerchantRecords: record count =", record_count, "<<<\n")
+    first_rec = ("To:	NCE NEW CANASIAN ENT INC	Contact: CHRIS GREEN, Phone: 613-722-7797, Fax:   ",
+                 "HARVEST LOAF, 1323 WELLINGTON",
+                 "OTTAWA, ON,  K1Y 3B6	Time Zone:  Eastern Time ",
+                 "Merchant: 07P282          Site:   07P28201")
+    
+    print("*** # of lines in 1st record = {} ***".format(len(records[0])))
+    print("1st record, 1st line:", records[0][0])
+    print("THIS LINE SHOULD BE :", first_rec[0])
+    
+    print("-------------------------------------")
+    print("1st record, 2nd line:", records[0][1])
+    print("THIS LINE SHOULD BE :", first_rec[1])
+    
+    print("-------------------------------------")
+    print("1st record, 3rd line:", records[0][2])
+    print("THIS LINE SHOULD BE :", first_rec[2])
+    
+    print("-------------------------------------")
+    print("1st record, 4th line:", records[0][3])
+    print("THIS LINE SHOULD BE :", first_rec[3])
+    
+    print("***********************************************")
+    
+    # 2nd to last record in first file should be:
+    last_rec = ("To:	SUPER MODEL PIZZA	Contact: REZA GOLSHAN, Phone: 416-533-9099, Fax:   ",
+                "SUPER MODEL PIZZA, 772 COLLEGE ST",
+                "TORONTO, ON,  M6G 1C6	Time Zone:  Eastern Time ",
+                "Merchant: 07P739          Site:   07P73901")
+    print("2nd last record, 1st line:", records[record_count-2][0])
+    print("THIS LINE SHOULD BE      :", last_rec[0])
+    print("2nd last record, 1st line:", records[record_count-2][1])
+    print("THIS LINE SHOULD BE      :", last_rec[1])
+    print("2nd last record, 1st line:", records[record_count-2][2])
+    print("THIS LINE SHOULD BE      :", last_rec[2])
+    print("2nd last record, 1st line:", records[record_count-2][3])
+    print("THIS LINE SHOULD BE      :", last_rec[3])
+    
+    # last record in first file should be:
+    last_rec = ("To:	JOEYS PIZZA AND SUB	Contact: JOEY SPADAFORA, Phone: 905 687 9494, Fax:   ",
+                "JOEYS PIZZA AND SUB, 224 LAKEPORT ROAD",
+                "SAINT CATHARINES, ON,  L2S 1T1	Time Zone:  Eastern Time ",
+                "Merchant: 07P731          Site:   07P73102")
+    print("last record, 1st line:", records[record_count-1][0])
+    print("THIS LINE SHOULD BE  :", last_rec[0])
+    print("last record, 2nd line:", records[record_count-1][1])
+    print("THIS LINE SHOULD BE  :", last_rec[1])
+    print("last record, 3rd line:", records[record_count-1][2])
+    print("THIS LINE SHOULD BE  :", last_rec[2])
+    print("last record, 4th line:", records[record_count-1][3])
+    print("THIS LINE SHOULD BE  :", last_rec[3])
                 
                 
 if __name__ == "__main__" : main()
