@@ -1,4 +1,4 @@
-import sys, os, OsMerchant as om
+import sys, os, OsMerchantReportRecord as omrr
 
 # Initialize some constants
 toToken = "To"
@@ -10,6 +10,17 @@ merchantToken = "Merchant:"
 siteToken = "Site:"
 terminalToken = "Terminal:"
 dateToken = "Date"
+
+def usage():
+    msg = """
+    OsMerchantParser.py : reads all the monthly Open Solutions monthly merchant
+    reports, parses them into raw merchant chuncks, parses those chuncks into
+    merchant report records, and then persists those records. To run from
+    ipython:  run OsMerchantParser.py ../data/rawOsMerchantReportsTxt/
+    
+    """
+    print(msg)
+
 
 def main():
     """ Iterates through data dir, reads each OS monthly merchant report file,
@@ -24,6 +35,7 @@ def main():
     data_files = os.listdir(data_dir)
     for i in range(1): #len(data_files)):
         file = data_files[i]
+        report_dict = getOsReportInfo(file)
         try:
             path = data_dir + file
             f = open(path)
@@ -32,13 +44,16 @@ def main():
             print(path, "not found! Exiting.")
             sys.exit(0)
         lines = f.readlines()
-        # if i == 0:
-            # testGetRawMerchantRecords(lines)
+        # if i == 0: testGetRawMerchantRecords(lines)
         raw_merchants = getRawMerchantRecords(lines)
         # parse raw merchants in merchant objects that can be persisted
-        parsed_merchant = om.OsMerchant(file, raw_merchants[0])
-        print(parsed_merchant.toString())
-
+        for j in range(len(raw_merchants)):
+            merchant_dict = {}
+            raw_merchant = raw_merchants[j]
+            # 2nd line of the raw merchant has the business name
+            merchant_dict['busName'] = getBusinessName(raw_merchant[1])
+            merchant_record = omrr.OsMerchantReportRecord(report_dict, merchant_dict)
+            print(merchant_record.toString())
 
 
 def getRawMerchantRecords(lines):
@@ -77,7 +92,58 @@ def getRawMerchantRecords(lines):
             
     return raw_records
     
+def getIsoNumFromFileName(file_name):
+    """ Returns the first three characters from file_name: 07p or 56p
+    with p being lower case.
+
+    file_name is expected to be of the form: iiP_ymm where:
+    ii = 07 or 56
+    y = last digit of the year 2004 through 2008
+    mm = month of the report, zero padded: 01 through 12
+    e.g. 07P_401.txt
+    """
+    return file_name[:3].lower()
+    
+def getYearFromFileName(file_name):
+    """ Returns an intger year for the report file_name: 2004 thru 2008
+    
+    file_name is expected to be of the form: iiP_ymm where:
+    ii = 07 or 56
+    y = last digit of the year 2004 through 2008
+    mm = month of the report, zero padded: 01 through 12
+    e.g. 07P_401.txt
+    """
+    return 2000 + int(file_name[4:5])
+    
+def getMonthFromFileName(file_name):
+    """ Returns an integer report month from file_name: 1 thru 12
+    
+    file_name is expected to be of the form: iiP_ymm where:
+    ii = 07 or 56
+    y = last digit of the year 2004 through 2008
+    mm = month of the report, zero padded: 01 through 12
+    e.g. 07P_401.txt
+    """
+    return int(file_name[5:7])
+    
+def getOsReportInfo(file_name):
+    result = dict(isoNum = getIsoNumFromFileName(file_name),
+                  reportYear = getYearFromFileName(file_name),
+                  reportMonth = getMonthFromFileName(file_name))
+    
+    return result
+    
+def getBusinessName(raw_osm):
+    """ Returns the business name of raw OS merchant. The business name is
+    listed at the start of the 2nd line just below the "To" field.
+    """
+    return raw_osm.split(',')[0]
+    
 def testGetRawMerchantRecords(lines):
+    """ Tests the first 4 lines of the first, second to last, and
+    last raw merchant record by printing both the parsed value and
+    the expect value of the line.
+    """
     # Get all the raw records in this monthly report file
     records = getRawMerchantRecords(lines)
     record_count = len(records)
