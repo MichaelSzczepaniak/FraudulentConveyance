@@ -1,4 +1,4 @@
-import sys, os
+import sys, os, OsMerchant as om
 
 # Initialize some constants
 toToken = "To"
@@ -32,45 +32,14 @@ def main():
             print(path, "not found! Exiting.")
             sys.exit(0)
         lines = f.readlines()
-        if i == 0:
-            testGetRawMerchantRecords(lines)
+        # if i == 0:
+            # testGetRawMerchantRecords(lines)
         raw_merchants = getRawMerchantRecords(lines)
         # parse raw merchants in merchant objects that can be persisted
-        # parsed_merchants = parseRawMerchants(raw_merchants)
+        parsed_merchant = om.OsMerchant(file, raw_merchants[0])
+        print(parsed_merchant.toString())
 
-def getIsoNumFromFileName(file_name):
-    """ Returns the first three characters from file_name: 07p or 56p
-    with p being lower case.
-    
-    file_name is expected to be of the form: iiP_ymm where:
-    ii = 07 or 56
-    y = last digit of the year 2004 through 2008
-    mm = month of the report, zero padded: 01 through 12
-    e.g. 07P_401.txt
-    """
-    return file_name[:3].lower()
 
-def getYearFromFileName(file_name):
-    """ Returns an intger year for the report file_name: 2004 thru 2008
-    
-    file_name is expected to be of the form: iiP_ymm where:
-    ii = 07 or 56
-    y = last digit of the year 2004 through 2008
-    mm = month of the report, zero padded: 01 through 12
-    e.g. 07P_401.txt
-    """
-    return 2000 + int(file_name[4:5])
-    
-def getMonthFromFileName(file_name):
-    """ Returns an integer report month from file_name: 1 thru 12
-    
-    file_name is expected to be of the form: iiP_ymm where:
-    ii = 07 or 56
-    y = last digit of the year 2004 through 2008
-    mm = month of the report, zero padded: 01 through 12
-    e.g. 07P_401.txt
-    """
-    return int(file_name[5:7])
 
 def getRawMerchantRecords(lines):
     """ Parses a list of strings into another list of strings where each
