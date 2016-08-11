@@ -50,8 +50,8 @@ def main():
         for j in range(len(raw_merchants)):
             merchant_dict = {}
             raw_merchant = raw_merchants[j]
-            # 2nd line of the raw merchant has the business name
-            merchant_dict['busName'] = getBusinessName(raw_merchant[1])
+            merchant_dict['busName'] = getBusinessName(raw_merchant)
+            merchant_dict['corpName'] = getCorporateName(raw_merchant)
             merchant_record = omrr.OsMerchantReportRecord(report_dict, merchant_dict)
             print(merchant_record.toString())
 
@@ -136,8 +136,18 @@ def getOsReportInfo(file_name):
 def getBusinessName(raw_osm):
     """ Returns the business name of raw OS merchant. The business name is
     listed at the start of the 2nd line just below the "To" field.
+    
+    raw_osm - raw os merchant record
     """
-    return raw_osm.split(',')[0]
+    return raw_osm[1].split(',')[0]
+    
+def getCorporateName(raw_osm):
+    """ Returns the corporate name of raw OS merchant. The corporate name is
+    listed immediately following the "To:" token in first line of raw_osm.
+    
+    raw_osm - raw os merchant record
+    """
+    return raw_osm[0].split("\t")[1]
     
 def testGetRawMerchantRecords(lines):
     """ Tests the first 4 lines of the first, second to last, and
