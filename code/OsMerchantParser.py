@@ -33,7 +33,7 @@ def main():
     """
     data_dir = sys.argv[1]  # first arg should be path to data dir
     data_files = os.listdir(data_dir)
-    for i in range(1): #len(data_files)):
+    for i in range(3): #len(data_files)):
         file = data_files[i]
         report_dict = getOsReportInfo(file)
         try:
@@ -47,13 +47,15 @@ def main():
         # if i == 0: testGetRawMerchantRecords(lines)
         raw_merchants = getRawMerchantRecords(lines)
         # parse raw merchants in merchant objects that can be persisted
-        for j in range(len(raw_merchants)):
-            merchant_dict = {}
+        record_count = len(raw_merchants)
+        for j in range(record_count):
             raw_merchant = raw_merchants[j]
-            merchant_dict['busName'] = getBusinessName(raw_merchant)
-            merchant_dict['corpName'] = getCorporateName(raw_merchant)
+            merchant_dict = loadMerchantInfo(raw_merchant)
             merchant_record = omrr.OsMerchantReportRecord(report_dict, merchant_dict)
             print(merchant_record.toString())
+        print("{}{} records processed for {}-{}{}".format("\n", record_count,
+            report_dict.get('reportMonth'), report_dict.get('reportYear'),
+            "\n"))
 
 
 def getRawMerchantRecords(lines):
@@ -133,21 +135,66 @@ def getOsReportInfo(file_name):
     
     return result
     
-def getBusinessName(raw_osm):
+def parseBusinessName(raw_osm):
     """ Returns the business name of raw OS merchant. The business name is
     listed at the start of the 2nd line just below the "To" field.
     
     raw_osm - raw os merchant record
     """
-    return raw_osm[1].split(',')[0]
+    return raw_osm[1].split(',')[0].strip()
     
-def getCorporateName(raw_osm):
+def parseCorporateName(raw_osm):
     """ Returns the corporate name of raw OS merchant. The corporate name is
     listed immediately following the "To:" token in first line of raw_osm.
     
     raw_osm - raw os merchant record
     """
-    return raw_osm[0].split("\t")[1]
+    return raw_osm[0].split("\t")[1].strip()
+    
+def parseContact(raw_osm):
+    """ Returns the contact field of raw OS merchant. The conctact is
+    the field following the "Contact:" token in first line of raw_osm.
+    
+    raw_osm - raw os merchant record
+    """
+    contact_part = raw_osm[0].split(contactToken)[1]
+    return contact_part.split(",")[0].strip()
+    
+def parsePhone(raw_osm):
+    """ Returns the phone field of raw OS merchant. The phone # is
+    the field following the "Phone:" token in first line of raw_osm.
+    
+    raw_osm - raw os merchant record
+    """
+    phone_part = raw_osm[0].split(phoneToken)
+    if(len(phone_part) > 1):
+        phone_part = phone_part[1].split(",")[0].strip()
+    else: 
+        phone_part = ""
+        
+    return phone_part.strip()
+    
+def parseAddress(raw_osm):
+    """
+    """
+    address_part = raw_osm[1].split(",")[1]
+    
+    return address_part.strip()
+    
+def loadMerchantInfo(raw_osm):
+    """ Returns a dictionary populated with all the merchant information
+    contained in the raw os merchant record.
+    
+    raw_osm - raw os merchant record
+    """
+    merchant = {}
+    merchant['busName'] = parseBusinessName(raw_osm)
+    merchant['corpName'] = parseCorporateName(raw_osm)
+    merchant['contact'] = parseContact(raw_osm)
+    merchant['phone'] = parsePhone(raw_osm)
+    merchant['address'] = parseAddress(raw_osm)
+    
+    return merchant
     
 def testGetRawMerchantRecords(lines):
     """ Tests the first 4 lines of the first, second to last, and
