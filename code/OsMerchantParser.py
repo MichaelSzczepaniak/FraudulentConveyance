@@ -15,8 +15,10 @@ def usage():
     msg = """
     OsMerchantParser.py : reads all the monthly Open Solutions monthly merchant
     reports, parses them into raw merchant chuncks, parses those chuncks into
-    merchant report records, and then persists those records. To run from
-    ipython:  run OsMerchantParser.py ../data/rawOsMerchantReportsTxt/
+    merchant report records, and then persists those records.
+    To run from ipython:
+    
+    run OsMerchantParser.py ../data/rawOsMerchantReportsTxt/
     
     """
     print(msg)

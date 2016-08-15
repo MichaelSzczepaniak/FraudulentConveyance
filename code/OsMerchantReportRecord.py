@@ -96,10 +96,17 @@ class OsMerchantReportRecord:
     
     def toString(self):
         osmrr_string = (self._busName, self._corpName, self._contact,
-                        self._phone, self._isoNum, self._address,
+                        self._phone, self._address, self._isoNum,
                         str(self._reportYear), str(self._reportMonth))
+        
         return ",".join(osmrr_string)
     
+    def asTuple(self):
+        osmrr_tuple = (self._busName, self._corpName, self._contact,
+                        self._phone, self._address, self._isoNum,
+                        str(self._reportYear), str(self._reportMonth))
+                        
+        return osmrr_tuple
     
         
 if "__name__" == "__main__" : main()
