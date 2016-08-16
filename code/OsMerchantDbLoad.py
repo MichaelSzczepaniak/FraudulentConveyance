@@ -14,7 +14,7 @@ def main():
     create_table_command = buildCreateTableCommand()
     db.execute(create_table_command)
     data_files = os.listdir(data_dir)
-    for i in range(1): #range(len(data_files)):
+    for i in range(len(data_files)):
         file = data_files[i]
         report_dict = omp.getOsReportInfo(file)
         try:
@@ -35,6 +35,10 @@ def main():
             merchant_dict = omp.loadMerchantInfo(raw_merchant)
             merchant_record = omrr.OsMerchantReportRecord(report_dict, merchant_dict)
             persistMerchantRecord(db, merchant_record)
+            
+        print("finished processing file: {}".format(file))
+            
+    print("DONE!!!")
             
 def buildDropTableCommand(table_name = "merchants_report_records"):
     drop_table_command = "drop table if exists " + table_name
@@ -89,10 +93,8 @@ def persistMerchantRecord(data_base, mrec, table_name = "merchants_report_record
     # db.execute('insert into merchants (isoNum, reportMonth, reportYear) values (?, ?, ?)', ('58x', 3, 2004))
     # db.execute('insert into merchants (isoNum, reportMonth, reportYear) values (?, ?, ?)', ('34s', 1, 2007))
     data_base.commit()
-    cursor = data_base.execute("select * from " + table_name + " order by reportMonth")
-    for row in cursor:
-        print(row)
-        
-    print("done...")
+    # cursor = data_base.execute("select busName from " + table_name + " order by reportMonth")
+    # for row in cursor:
+        # print(row)
 
 if __name__ == "__main__" : main()
