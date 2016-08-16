@@ -226,8 +226,8 @@ def parseTimeZone(raw_osm):
     """
     # Next 3 lines needed because report format changed
     tz_line = ""
-    if timeZoneToken in raw_osm[3] : tz_line = raw_osm[3]
-    elif timeZoneToken in raw_osm[2] : tz_line = raw_osm[2]
+    if timeZoneToken in raw_osm[2] : tz_line = raw_osm[2]   # older reports
+    elif timeZoneToken in raw_osm[1] : tz_line = raw_osm[1] # newer reports
     
     time_zone_part = "NO TIME ZONE"
     if timeZoneToken in tz_line :
@@ -245,6 +245,12 @@ def parseSiteId(raw_osm):
     sid_part = raw_osm[3].split(siteToken)[1].strip()
     
     return sid_part
+    
+def parseTerminalId(raw_osm):
+    # Next 3 lines needed because report format changed
+    tid_line = ""
+    if terminalToken in raw_osm[5] : tid_line = raw_osm[3]   # older reports
+    elif terminalToken in raw_osm[4] : tid_line = raw_osm[2] # newer reports
     
 def loadMerchantInfo(raw_osm):
     """ Returns a dictionary populated with all the merchant information
@@ -264,6 +270,7 @@ def loadMerchantInfo(raw_osm):
     merchant['timeZone'] = parseTimeZone(raw_osm)
     merchant['merchantId'] = parseMerchantId(raw_osm)
     merchant['siteId'] = parseSiteId(raw_osm)
+    merchant['terminalId'] = parseTerminalId(raw_osm)
     
     return merchant
     

@@ -69,10 +69,11 @@ def getOSMfields():
     """
     fields = ['busName', 'corpName', 'contact', 'phone', 'address',
               'city', 'province', 'postalCode', 'timeZone',
-              'merchantId', 'siteId',
+              'merchantId', 'siteId', 'terminalId',
               'isoNum', 'reportYear', 'reportMonth']
-    types = ['text', 'text', 'text', 'text', 'text', 'text', 'text',
-             'text', 'text', 'text', 'text', 'text', 'int', 'int']
+    types = ['text', 'text', 'text', 'text', 'text', 'text',
+             'text', 'text', 'text', 'text', 'text', 'text',
+             'text', 'int', 'int']
     combo = []
     for i in range(len(fields)):
         combo.append(fields[i] + " " + types[i])

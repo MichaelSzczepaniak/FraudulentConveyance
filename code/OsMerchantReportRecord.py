@@ -19,7 +19,7 @@ class OsMerchantReportRecord:
         self._timeZone = os_merchant_dict['timeZone']
         self._merchantId = os_merchant_dict['merchantId']
         self._siteId = os_merchant_dict['siteId']
-        # self._termId = os_merchant_dict['termId']
+        self._terminalId = os_merchant_dict['terminalId']
         # sum of the col "# of Batches"
         #self._totalBatches = os_merchant_dict['']
         # totalCompleteIdpOnly & totalCompleteIdpCB non-existent (-1) tabs 7-19
@@ -88,31 +88,23 @@ class OsMerchantReportRecord:
     def getSiteId():
         return self._siteId
         
-    # def getTerminalId():
-        # self._termID
+    def getTerminalId():
+        return self._terminalId
     
-    
-    
-    
-    def toString(self):
-        osmrr_string = (self._busName, self._corpName, self._contact,
-                        self._phone, self._address,
-                        self._city, self._province, self._postalCode,
-                        self._timeZone, self._merchantId, self._siteId,
-                        self._isoNum, str(self._reportYear),
-                        str(self._reportMonth))
-        
-        return ",".join(osmrr_string)
     
     def asTuple(self):
         osmrr_tuple = (self._busName, self._corpName, self._contact,
-                        self._phone, self._address, 
-                        self._city, self._province, self._postalCode,
-                        self._timeZone, self._merchantId, self._siteId,
-                        self._isoNum, str(self._reportYear),
-                        str(self._reportMonth))
-                        
+                       self._phone, self._address, self._city,
+                       self._province, self._postalCode, self._timeZone,
+                       self._merchantId, self._siteId, self._terminalId,
+                       self._isoNum, str(self._reportYear),
+                       str(self._reportMonth))
+                       
         return osmrr_tuple
+    
+    def toString(self):
+        return ",".join(asTuple(self))
+
     
         
 # if "__name__" == "__main__" : main()
