@@ -17,9 +17,9 @@ class OsMerchantReportRecord:
         self._province = os_merchant_dict['province']
         self._postalCode = os_merchant_dict['postalCode']
         self._timeZone = os_merchant_dict['timeZone']
-        # self._merchantID = os_merchant_dict['merchandID']
-        # self._siteID = os_merchant_dict['siteID']
-        # self._termID = os_merchant_dict['termID']
+        self._merchantId = os_merchant_dict['merchantId']
+        self._siteId = os_merchant_dict['siteId']
+        # self._termId = os_merchant_dict['termId']
         # sum of the col "# of Batches"
         #self._totalBatches = os_merchant_dict['']
         # totalCompleteIdpOnly & totalCompleteIdpCB non-existent (-1) tabs 7-19
@@ -82,11 +82,11 @@ class OsMerchantReportRecord:
     def getTimeZone():
         return self._timeZone
         
-    # def getMerchantId():
-        # return self._merchantID
+    def getMerchantId():
+        return self._merchantId
         
-    # def getSiteId():
-        # return self._siteID
+    def getSiteId():
+        return self._siteId
         
     # def getTerminalId():
         # self._termID
@@ -98,7 +98,7 @@ class OsMerchantReportRecord:
         osmrr_string = (self._busName, self._corpName, self._contact,
                         self._phone, self._address,
                         self._city, self._province, self._postalCode,
-                        self._timeZone,
+                        self._timeZone, self._merchantId, self._siteId,
                         self._isoNum, str(self._reportYear),
                         str(self._reportMonth))
         
@@ -108,7 +108,7 @@ class OsMerchantReportRecord:
         osmrr_tuple = (self._busName, self._corpName, self._contact,
                         self._phone, self._address, 
                         self._city, self._province, self._postalCode,
-                        self._timeZone,
+                        self._timeZone, self._merchantId, self._siteId,
                         self._isoNum, str(self._reportYear),
                         str(self._reportMonth))
                         

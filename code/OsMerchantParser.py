@@ -235,6 +235,17 @@ def parseTimeZone(raw_osm):
     
     return time_zone_part
     
+def parseMerchantId(raw_osm):
+    mid_part = raw_osm[3].split(siteToken)[0]
+    mid_part = mid_part.replace(merchantToken, "").strip()
+    
+    return mid_part
+    
+def parseSiteId(raw_osm):
+    sid_part = raw_osm[3].split(siteToken)[1].strip()
+    
+    return sid_part
+    
 def loadMerchantInfo(raw_osm):
     """ Returns a dictionary populated with all the merchant information
     contained in the raw os merchant record.
@@ -251,6 +262,8 @@ def loadMerchantInfo(raw_osm):
     merchant['province'] = parseProvince(raw_osm)
     merchant['postalCode'] = parsePostalCode(raw_osm)
     merchant['timeZone'] = parseTimeZone(raw_osm)
+    merchant['merchantId'] = parseMerchantId(raw_osm)
+    merchant['siteId'] = parseSiteId(raw_osm)
     
     return merchant
     
