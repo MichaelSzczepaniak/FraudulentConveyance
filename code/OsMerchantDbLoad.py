@@ -1,12 +1,25 @@
 import sys, os, sqlite3
 import OsMerchantReportRecord as omrr, OsMerchantParser as omp
+from datetime import datetime as dt
 #import OsMerchantDbLoad as dbl
 
-def main():
-    """
-    run OsMerchantDBLoad.py ../data/rawOsMerchantReportsTxt/
-    """
+def usage():
+    msg = """
+    OsMerchantDBLoad.py : reads all the monthly Open Solutions monthly merchant
+    reports, parses them into raw merchant chuncks, parses those chuncks into
+    OsMerchantReportRecord objects and then persists those objects into a
+    SQLite3 database.  The path to the data dir needs to passed as the first
+    argument. For example, from ipython shell:
     
+    run OsMerchantDBLoad.py <path to Open Solutions text reports>
+    e.g.
+    run OsMerchantDBLoad.py ../data/rawOsMerchantReportsTxt/
+    
+    """
+    print(msg)
+
+def main():
+    print("START DB LOAD at: {}".format(str(dt.now())))
     data_dir = sys.argv[1]  # first arg should be path to data dir
     db = sqlite3.connect('OsReportMerchants.db')
     drop_table_command = buildDropTableCommand()
@@ -38,7 +51,7 @@ def main():
             
         print("finished processing file: {}".format(file))
             
-    print("DONE!!!")
+    print("FINISH DB LOAD at: {}".format(str(dt.now())))
             
 def buildDropTableCommand(table_name = "merchants_report_records"):
     drop_table_command = "drop table if exists " + table_name
@@ -46,11 +59,19 @@ def buildDropTableCommand(table_name = "merchants_report_records"):
     return drop_table_command
 
 def getOSMfields():
-    """ Need to preserve order of asTuple() method
+    """ Returns of tuple of 3 lists. First list are the fields of
+    the OsMerchantReportRecord objects. Second list are the data types
+    of each of the OsMerchantReportRecord object fields. Third list
+    are the fields and types separated by space. This third field is
+    intended to be used with call that insert data into the db.
+    
+    Note: Need to preserve order of asTuple() method
     """
     fields = ['busName', 'corpName', 'contact', 'phone', 'address',
+              'city', 'province', 'postalCode', 'timeZone',
               'isoNum', 'reportYear', 'reportMonth']
-    types = ['text', 'text', 'text', 'text', 'text', 'text', 'int', 'int']
+    types = ['text', 'text', 'text', 'text', 'text', 'text', 'text',
+             'text', 'text', 'text', 'int', 'int']
     combo = []
     for i in range(len(fields)):
         combo.append(fields[i] + " " + types[i])

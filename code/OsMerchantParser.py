@@ -14,10 +14,11 @@ dateToken = "Date"
 def usage():
     msg = """
     OsMerchantParser.py : reads all the monthly Open Solutions monthly merchant
-    reports, parses them into raw merchant chuncks, parses those chuncks into
-    merchant report records, and then persists those records.
-    To run from ipython:
+    reports, parses them into raw merchant chuncks and  parses those chuncks
+    into merchant report records.  To run from ipython:
     
+    run OsMerchantParser.py <path to Open Solutions text reports>
+    e.g.
     run OsMerchantParser.py ../data/rawOsMerchantReportsTxt/
     
     """
@@ -177,11 +178,62 @@ def parsePhone(raw_osm):
     return phone_part.strip()
     
 def parseAddress(raw_osm):
-    """
+    """ Returns the address field of raw OS merchant. The address is
+    the field following the business name field in 2nd line of raw_osm.
+    
+    raw_osm - raw os merchant record
     """
     address_part = raw_osm[1].split(",")[1]
     
     return address_part.strip()
+    
+def parseCity(raw_osm):
+    """ Returns the city field of raw OS merchant. The city is
+    the field following the 1st field in 3rd line of raw_osm.
+    
+    raw_osm - raw os merchant record
+    """
+    city_part = raw_osm[2].split(",")[0].strip()
+    
+    return city_part
+    
+def parseProvince(raw_osm):
+    """ Returns the province field of raw OS merchant. The province
+    is the field following the city field in 3rd line of raw_osm.
+    
+    raw_osm - raw os merchant record
+    """
+    prov_part = raw_osm[2].split(",")[1].strip()
+    
+    return prov_part
+    
+def parsePostalCode(raw_osm):
+    """ Returns the postal code field of raw OS merchant. The postal code
+    is the field following the province field in 3rd line of raw_osm.
+    
+    raw_osm - raw os merchant record
+    """
+    postal_part = raw_osm[2].split(",")[2].strip()  # has postal code and TZ
+    postal_part = postal_part[:7]
+    
+    return postal_part
+    
+def parseTimeZone(raw_osm):
+    """ Returns the Time Zone field of raw OS merchant. The Time Zone
+    is the field following the postal code field in 3rd line of raw_osm.
+    
+    raw_osm - raw os merchant record
+    """
+    # Next 3 lines needed because report format changed
+    tz_line = ""
+    if timeZoneToken in raw_osm[3] : tz_line = raw_osm[3]
+    elif timeZoneToken in raw_osm[2] : tz_line = raw_osm[2]
+    
+    time_zone_part = "NO TIME ZONE"
+    if timeZoneToken in tz_line :
+        time_zone_part = tz_line.split("Time Zone:")[1].strip()
+    
+    return time_zone_part
     
 def loadMerchantInfo(raw_osm):
     """ Returns a dictionary populated with all the merchant information
@@ -195,6 +247,10 @@ def loadMerchantInfo(raw_osm):
     merchant['contact'] = parseContact(raw_osm)
     merchant['phone'] = parsePhone(raw_osm)
     merchant['address'] = parseAddress(raw_osm)
+    merchant['city'] = parseCity(raw_osm)
+    merchant['province'] = parseProvince(raw_osm)
+    merchant['postalCode'] = parsePostalCode(raw_osm)
+    merchant['timeZone'] = parseTimeZone(raw_osm)
     
     return merchant
     

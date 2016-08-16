@@ -13,10 +13,10 @@ class OsMerchantReportRecord:
         self._contact = os_merchant_dict['contact']
         self._phone = os_merchant_dict['phone']
         self._address = os_merchant_dict['address']
-        # self._city = os_merchant_dict['city']
-        # self._province = os_merchant_dict['province']
-        # self._postalCode = os_merchant_dict['postalCode']
-        # self._timeZone = os_merchant_dict['timeZone']
+        self._city = os_merchant_dict['city']
+        self._province = os_merchant_dict['province']
+        self._postalCode = os_merchant_dict['postalCode']
+        self._timeZone = os_merchant_dict['timeZone']
         # self._merchantID = os_merchant_dict['merchandID']
         # self._siteID = os_merchant_dict['siteID']
         # self._termID = os_merchant_dict['termID']
@@ -45,7 +45,7 @@ class OsMerchantReportRecord:
         #self._merchantSettlement = os_merchant_dict['']
         
     #### All we need are getters because all instance var's should never
-    #### change after instantiantion.
+    #### change after instantiation.
     def getIsoNum():
         return self._isoNum
         
@@ -70,17 +70,17 @@ class OsMerchantReportRecord:
     def getAddress():
         return self._address
         
-    # def getCity():
-        # return self._city
+    def getCity():
+        return self._city
         
-    # def getProvince():
-        # return self._province
+    def getProvince():
+        return self._province
         
-    # def getPostalCode():
-        # return self._postalCode
+    def getPostalCode():
+        return self._postalCode
         
-    # def getTimeZone():
-        # return self._timeZone
+    def getTimeZone():
+        return self._timeZone
         
     # def getMerchantId():
         # return self._merchantID
@@ -96,17 +96,23 @@ class OsMerchantReportRecord:
     
     def toString(self):
         osmrr_string = (self._busName, self._corpName, self._contact,
-                        self._phone, self._address, self._isoNum,
-                        str(self._reportYear), str(self._reportMonth))
+                        self._phone, self._address,
+                        self._city, self._province, self._postalCode,
+                        self._timeZone,
+                        self._isoNum, str(self._reportYear),
+                        str(self._reportMonth))
         
         return ",".join(osmrr_string)
     
     def asTuple(self):
         osmrr_tuple = (self._busName, self._corpName, self._contact,
-                        self._phone, self._address, self._isoNum,
-                        str(self._reportYear), str(self._reportMonth))
+                        self._phone, self._address, 
+                        self._city, self._province, self._postalCode,
+                        self._timeZone,
+                        self._isoNum, str(self._reportYear),
+                        str(self._reportMonth))
                         
         return osmrr_tuple
     
         
-if "__name__" == "__main__" : main()
+# if "__name__" == "__main__" : main()
