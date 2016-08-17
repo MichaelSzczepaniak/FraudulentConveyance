@@ -46,64 +46,66 @@ class OsMerchantReportRecord:
         
     #### All we need are getters because all instance var's should never
     #### change after instantiation.
-    def getIsoNum():
+    def getIsoNum(self):
         return self._isoNum
         
-    def getMonth():
+    def getMonth(self):
         return self._reportMonth
         
-    def getYear():
+    def getYear(self):
         return self._reportYear
         
-    def getBusName():
+    def getBusName(self):
         return self._busName
         
-    def getCorpName():
+    def getCorpName(self):
         return self._corpName
         
-    def getContact():
+    def getContact(self):
         return self._contact
         
-    def getPhone():
+    def getPhone(self):
         return self._phone
     
-    def getAddress():
+    def getAddress(self):
         return self._address
         
-    def getCity():
+    def getCity(self):
         return self._city
         
-    def getProvince():
+    def getProvince(self):
         return self._province
         
-    def getPostalCode():
+    def getPostalCode(self):
         return self._postalCode
         
-    def getTimeZone():
+    def getTimeZone(self):
         return self._timeZone
         
-    def getMerchantId():
+    def getMerchantId(self):
         return self._merchantId
         
-    def getSiteId():
+    def getSiteId(self):
         return self._siteId
         
-    def getTerminalId():
+    def getTerminalId(self):
         return self._terminalId
     
-    
     def asTuple(self):
-        osmrr_tuple = (self._busName, self._corpName, self._contact,
-                       self._phone, self._address, self._city,
-                       self._province, self._postalCode, self._timeZone,
-                       self._merchantId, self._siteId, self._terminalId,
-                       self._isoNum, str(self._reportYear),
-                       str(self._reportMonth))
+        osm_tuple = (self._busName, self._corpName, self._contact,
+                     self._phone, self._address, self._city,
+                     self._province, self._postalCode, self._timeZone,
+                     self._merchantId, self._siteId, self._terminalId,
+                     self._isoNum, self._reportYear, self._reportMonth)
                        
-        return osmrr_tuple
+        return osm_tuple
     
     def toString(self):
-        return ",".join(asTuple(self))
+        osm_fields = []
+        for item in self.asTuple():
+            osm_fields.append(str(item))
+        
+        return ",".join(osm_fields)
 
     
         

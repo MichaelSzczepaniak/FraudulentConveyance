@@ -1,7 +1,6 @@
 import sys, os, sqlite3
 import OsMerchantReportRecord as omrr, OsMerchantParser as omp
 from datetime import datetime as dt
-#import OsMerchantDbLoad as dbl
 
 def usage():
     msg = """
@@ -21,7 +20,7 @@ def usage():
 def main():
     print("START DB LOAD at: {}".format(str(dt.now())))
     data_dir = sys.argv[1]  # first arg should be path to data dir
-    db = sqlite3.connect('OsReportMerchants.db')
+    db = sqlite3.connect('OsReportMerchants.sqlite')  # Connect to db.
     drop_table_command = buildDropTableCommand()
     db.execute(drop_table_command)
     create_table_command = buildCreateTableCommand()
@@ -50,7 +49,7 @@ def main():
             persistMerchantRecord(db, merchant_record)
             
         print("finished processing file: {}".format(file))
-            
+    db.close()     
     print("FINISH DB LOAD at: {}".format(str(dt.now())))
             
 def buildDropTableCommand(table_name = "merchants_report_records"):

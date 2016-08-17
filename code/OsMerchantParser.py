@@ -36,7 +36,7 @@ def main():
     """
     data_dir = sys.argv[1]  # first arg should be path to data dir
     data_files = os.listdir(data_dir)
-    for i in range(3): #len(data_files)):
+    for i in range(len(data_files)):
         file = data_files[i]
         report_dict = getOsReportInfo(file)
         try:
@@ -247,10 +247,9 @@ def parseSiteId(raw_osm):
     return sid_part
     
 def parseTerminalId(raw_osm):
-    # Next 3 lines needed because report format changed
-    tid_line = ""
-    if terminalToken in raw_osm[5] : tid_line = raw_osm[3]   # older reports
-    elif terminalToken in raw_osm[4] : tid_line = raw_osm[2] # newer reports
+    terminal_part = raw_osm[4].split(terminalToken)[1].strip()
+    
+    return terminal_part
     
 def loadMerchantInfo(raw_osm):
     """ Returns a dictionary populated with all the merchant information
@@ -286,7 +285,9 @@ def testGetRawMerchantRecords(lines):
     first_rec = ("To:	NCE NEW CANASIAN ENT INC	Contact: CHRIS GREEN, Phone: 613-722-7797, Fax:   ",
                  "HARVEST LOAF, 1323 WELLINGTON",
                  "OTTAWA, ON,  K1Y 3B6	Time Zone:  Eastern Time ",
-                 "Merchant: 07P282          Site:   07P28201")
+                 "Merchant: 07P282          Site:   07P28201",
+                 ""
+                 "Terminal: 07P10008")
     
     print("*** # of lines in 1st record = {} ***".format(len(records[0])))
     print("1st record, 1st line:", records[0][0])
@@ -303,6 +304,10 @@ def testGetRawMerchantRecords(lines):
     print("-------------------------------------")
     print("1st record, 4th line:", records[0][3])
     print("THIS LINE SHOULD BE :", first_rec[3])
+    
+    print("-------------------------------------")
+    print("1st record, 5th line:", records[0][4])
+    print("THIS LINE SHOULD BE :", first_rec[4])  # Jumps to Terminal line
     
     print("***********************************************")
     
