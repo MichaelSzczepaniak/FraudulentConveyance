@@ -4,15 +4,17 @@ from datetime import datetime as dt
 
 def usage():
     msg = """
-    OsMerchantDBLoad.py : reads all the monthly Open Solutions monthly merchant
-    reports, parses them into raw merchant chuncks, parses those chuncks into
-    OsMerchantReportRecord objects and then persists those objects into a
-    SQLite3 database.  The path to the data dir needs to passed as the first
-    argument. For example, from ipython shell:
+    OsMerchantDBLoad.py : reads all the monthly Open Solutions monthly
+    merchant reports, parses them into raw merchant chuncks, parses those
+    chuncks into OsMerchantReportRecord objects and then persists those
+    objects into a SQLite3 database.  The path to the data dir needs to be
+    passed as the first argument. For example, from ipython shell:
     
     run OsMerchantDBLoad.py <path to Open Solutions text reports>
     e.g.
     run OsMerchantDBLoad.py ../data/rawOsMerchantReportsTxt/
+    
+    The name of the database created is: OsReportMerchants.sqlite
     
     """
     print(msg)
