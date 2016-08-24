@@ -107,6 +107,4 @@ class OsMerchantReportRecord:
         
         return ",".join(osm_fields)
 
-    
-        
 # if "__name__" == "__main__" : main()
