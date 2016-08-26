@@ -1,4 +1,4 @@
-import sys, os, sqlite3
+import sys, os, sqlite3, pandas as pd
 
 def main():
     """ Connects to the database of OS merchants, queries the
@@ -34,5 +34,48 @@ def buildMonthlyMerchantsTerminalsCommand() :
     create_table += "ORDER BY reportYear, reportMonth"
     
     return create_table
+    
+def addDropRateColumns(db_name='../data/OsReportMerchants.sqlite',
+                       table_name='osMonthlyMerchantsTerminals') :
+    """ Builds and returns a dataframe with the following columns:
+    yearFrac - float in the form yyyy.xx where xx is in 1/12 increments
+               which should make it suitable for scatter plotting
+    merchants_dropped - 
+    terminals_dropped - 
+    merchant_drop_rate -
+    terminal_drop_rate -
+    """
+    conn = sqlite3.connect(db_name)  # Connect to db.
+    cur = conn.cursor()
+    df = pd.read_sql_query("SELECT * from " + table_name, conn) # get all data
+    # add new columns
+    df['merchant_drops'] = -1
+    df['terminal_drops'] = -1
+    df['merchant_drop_rate'] = -1
+    df['terminal_drop_rate'] = -1
+    
+    return df
+    
+def computeDroppedMerchants(db_name='../data/OsReportMerchants.sqlite',
+                            table_name='merchants_report_records') :
+    """ Returns a 2 column dataframe: yearFrac and droppedMerchants
+    yearFrac - float in the form yyyy.xx where xx is in 1/12 increments
+               which should make it suitable for scatter plotting
+    dropped_merchants - integer number of merchants dropped in a given month
+    
+    A dropped merchant is one that had a merchantId in the immediately
+    preceding month which was absent in the current month
+    """
+    conn = sqlite3.connect(db_name)  # Connect to db.
+    cur = conn.cursor()
+    query_string = "SELECT ROUND((reportYear + (reportMonth/12.)), 2)"
+    query_string += " AS yearFrac, merchantId from " + table_name
+    df = pd.read_sql_query(query_string, conn)
+    # 
+    
+                           
+    return df
+    
+    
 
 if __name__ == "__main__" : main()
