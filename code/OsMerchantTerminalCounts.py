@@ -4,20 +4,34 @@ def main():
     """ Connects to the database of OS merchants, queries the
     merchant_report_records and writes a new table osMonthlyMerchantsTerminals
     which contains the monthly merchant and terminal counts.
-    This script takes the path to the db as a single parameter.
+    This script takes two parameters: First, the path to the db. Second, the
+    name of the table contianing the data needed to create the report file.
     From ipython:
     
-    run OsMerchantTerminalCounts ../data/OsReportMerchants.sqlite
+    run OsMerchantTerminalCounts ../data/OsReportMerchants.sqlite osMonthlyMerchantsTerminals
     """
-    if len(sys.argv) != 2 :
-        print("Program takes a single arg: the path to the db.  Exitting...")
+    if len(sys.argv) != 3 :
+        print("Program takes two arg's: path to db & data table.  Exitting.")
         sys.exit(1)
     db_name = sys.argv[1]  # First and only arg should be the name of db.
+    report_table_name = sys.argv[2]
     conn = sqlite3.connect(db_name)  # Connect to db.
     cur = conn.cursor()
-    # Create osMonthlyMerchantsTerminals table used for fraud analysis.
-    make_table_command = buildMonthlyMerchantsTerminalsCommand()
-    cur.execute(make_table_command)
+    # Create osMonthlyMerchantsTerminals table used for fraud analysis
+    # if it doesn't exist.
+    check_table_query = getCheckTableQueryString(report_table_name)
+    report_table = cur.execute(check_table_query)
+    if sum(1 for _ in report_table) < 1 :
+        make_table_command = buildMonthlyMerchantsTerminalsCommand()
+        cur.execute(make_table_command)
+    
+    
+    
+def getCheckTableQueryString(table_name) :
+    query = "SELECT name FROM sqlite_master WHERE "
+    query += "type='table' AND name='" + table_name + "'"
+    
+    return query
 
 def buildMonthlyMerchantsTerminalsCommand() :
     """ Builds and returns the SQL command what creates the
