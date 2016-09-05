@@ -8,7 +8,7 @@ def usage():
     merchant reports, parses them into raw merchant chuncks, parses those
     chuncks into OsMerchantReportRecord objects and then persists those
     objects into a SQLite3 database.  The path to the data dir needs to be
-    passed as the first argument. For example, from ipython shell:
+    passed as the first argument. For example, from the ipython shell:
     
     run OsMerchantDBLoad.py <path to Open Solutions text reports>
     e.g.
@@ -111,6 +111,8 @@ def buildInsertCommand(table_name = "merchants_report_records",
     return insert_command
             
 def persistMerchantRecord(data_base, mrec, table_name = "merchants_report_records"):
+    """ Persists mrec into table table_name in data base data_bases.
+    """
     insert_command = buildInsertCommand()
     data_base.execute(insert_command, mrec.asTuple())
     # db.execute('insert into merchants (isoNum, reportMonth, reportYear) values (?, ?, ?)', ('99q', 2, 2005))
