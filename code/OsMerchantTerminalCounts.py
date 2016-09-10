@@ -36,25 +36,31 @@ def main():
     df = addDropRateColumns(conn)
     print(df)
     
-def init() :
+def dev_init() :
+## use initialize stuff for development
+    # from OsMerchantTerminalCounts import *  # only use for interactive sessions!
     import sys, os, sqlite3, pandas as pd
     db_name = "../data/OsReportMerchants.sqlite"
-    table_name = "osMonthlyMerchantsTerminals"
     conn = sqlite3.connect(db_name)
+    x = getDropsAdds(2004, 1, 2004, 2, conn)
+    len(x[0])
+    len(x[1])
+    len(x[2])
+    len(x[3])
+    
     cur = conn.cursor()
+    table_name = "osMonthlyMerchantsTerminals"
     mer_ter_df = pd.read_sql_query("SELECT * from " + table_name, conn)
     # Add new columns and init to a recognizably unmodified value.
-    mer_ter_df['merchant_adds'] = -1
-    mer_ter_df['merchant_drops'] = -1
-    mer_ter_df['terminal_adds'] = -1
-    mer_ter_df['terminal_drops'] = -1
-    mer_ter_df['merchant_drop_rate'] = -1
-    mer_ter_df['terminal_drop_rate'] = -1
-    # dev getDroppedMerchants & getDroppedTerminals
-    year0=2004; month0=1; year1=2004; month1=2; table="merchants_report_records"
+    mer_ter_df['merchant_adds'] = None
+    mer_ter_df['merchant_drops'] = None
+    mer_ter_df['terminal_adds'] = None
+    mer_ter_df['terminal_drops'] = None
+    mer_ter_df['merchant_drop_rate'] = None
+    mer_ter_df['terminal_drop_rate'] = None
+
     
-    
-    pass
+    return(None)
     
 def getCheckTableQueryString(table_name) :
     query = "SELECT name FROM sqlite_master WHERE "
@@ -77,60 +83,6 @@ def buildMonthlyMerchantsTerminalsCommand() :
     create_table += "ORDER BY reportYear, reportMonth"
     
     return create_table
-    
-def addDropRateColumns(conn, table_name='osMonthlyMerchantsTerminals') :
-    """ Builds and returns a dataframe with the following columns:
-    yearFrac - float in the form yyyy.xx where xx is in 1/12 increments
-               which should make it suitable for scatter plotting
-    reportYear - int, year of a given merchants/terminals report: 2004-2008
-    reportMonth - int, month of a given merchants/terminals report: 1-12
-    merchants_dropped - 
-    terminals_dropped - 
-    merchant_drop_rate -
-    terminal_drop_rate -
-    """
-    # cur = conn.cursor()
-    df = pd.read_sql_query("SELECT * from " + table_name, conn)
-    # Add new columns and init to a recognizably unmodified value.
-    df['merchant_adds'] = -1
-    df['merchant_drops'] = -1
-    df['terminal_adds'] = -1
-    df['terminal_drops'] = -1
-    df['merchant_drop_rate'] = -1
-    df['terminal_drop_rate'] = -1
-    # Populate the values of above 4 created columns.
-    # df = populateDroppedMersTers(df)
-    
-    return df
-    
-def populateDroppedMersTers(mer_ter_df, conn) :
-    """ Populates the drops and drop_rate columns in the mer_ter_df dataframe.
-    This function expect there to be the following 
-    
-    A dropped merchant is one that had a merchantId in the immediately
-    preceding month which was absent in the current month. Similar for a
-    dropped terminal: terminalId existed in prior but not current month
-    """
-    mer_ter_df.ix[None, 'merchant_adds']
-    mer_ter_df.ix[None, 'merchant_drops']
-    mer_ter_df.ix[None, 'terminal_adds']
-    mer_ter_df.ix[None, 'terminal_drops']
-    mer_ter_df.ix[None, 'merchant_drop_rate']
-    mer_ter_df.ix[None, 'terminal_drop_rate']
-    for i in range(1, len(mer_ter_df)) :
-        current_year = mer_ter_df.ix[i, 'reportYear']
-        current_month = mer_ter_df.ix[i, 'reportMonth']
-        prior_year = current_year
-        prior_month = current_month - 1
-        # Adjust prior period if it crosses a year boundary
-        if prior_month < 1 :
-            prior_month = 12
-            prior_year = current_year - 1
-        drops = getDropped(prior_year, prior_month,
-                           current_year, current_month, conn)
-        
-    pass                       
-    # return df
 
 def getUniques(year, month, conn, select_type="merchantId",
                table="merchants_report_records") :
@@ -169,19 +121,70 @@ def getDropsAdds(year0, month0, year1, month1, conn) :
     table - table name were holding all the monthly merchant report records
             default value = merchants_report_records
     """
-    dropped_merchants = list(set(getUniques(year0, month0, conn)) -
-                             set(getUniques(year1, month1, conn))
-    added_merchants = list(set(getUniques(year1, month1, conn)) -
-                             set(getUniques(year0, month0, conn))
-    dropped_terminals =
-        list(set(getUniques(year0, month0, conn, "TerminalId")) -
-             set(getUniques(year1, month1, conn, "TerminalId")))
-    added_terminals =
-        list(set(getUniques(year1, month1, conn, "TerminalId")) -
-             set(getUniques(year0, month0, conn, "TerminalId")))
+    dropped_merchants = list(set(getUniques(year0, month0, conn)) - \
+                             set(getUniques(year1, month1, conn)))
+    added_merchants = list(set(getUniques(year1, month1, conn)) - \
+                           set(getUniques(year0, month0, conn)))
+    dropped_terminals = list(set(getUniques(year0, month0, conn, \
+                                 "terminalId")) - \
+                             set(getUniques(year1, month1, conn, "terminalId")))
+    added_terminals = list(set(getUniques(year1, month1, conn, \
+                                 "terminalId")) - \
+                           set(getUniques(year0, month0, conn, "terminalId")))
     
-    return (dropped_merchants, added_merchants,
-            dropped_terminals, added_terminals)
+    return (dropped_merchants, added_merchants, dropped_terminals, added_terminals)
+
+def populateDropAddColumns(conn, table_name='osMonthlyMerchantsTerminals') :
+    """ Builds and returns a dataframe with the following columns:
+    yearFrac - float in the form yyyy.xx where xx is in 1/12 increments
+               which should make it suitable for scatter plotting
+    reportYear - int, year of a given merchants/terminals report: 2004-2008
+    reportMonth - int, month of a given merchants/terminals report: 1-12
+    merchant_adds - int, number of merchants added from prior month
+    merchant_drops - int, number of merchants lost from prior month
+    terminal_adds - int, number of terminals added from prior month
+    terminal_drops - int, number of terminals lost from prior month
+    merchant_drop_rate - int, number of merchants lost as % of prior month
+    terminal_drop_rate - int, number of terminals lost as % of prior month
+    """
+    # cur = conn.cursor()
+    df = pd.read_sql_query("SELECT * from " + table_name, conn)
+    # Add new columns and init to a recognizably unmodified value.
+    df['merchant_adds'] = None
+    df['merchant_drops'] = None
+    df['terminal_adds'] = None
+    df['terminal_drops'] = None
+    df['merchant_drop_rate'] = None
+    df['terminal_drop_rate'] = None
+    # Populate the values of above 4 created columns.
+    # df = populateAddsDropsMersTers(df, conn)
     
+    return df
+    
+def populateAddsDropsMersTers(mer_ter_df, conn) :
+    """ Populates the drops, adds and drop_rate columns in the mer_ter_df
+    dataframe. This function expect there to be the following 
+    
+    A dropped merchant is one that had a merchantId in the immediately
+    preceding month which was absent in the current month. Similar for a
+    dropped terminal: terminalId existed in prior but not current month
+    """
+    
+    for i in range(1, len(mer_ter_df)) :
+        current_year = mer_ter_df.ix[i, 'reportYear']
+        current_month = mer_ter_df.ix[i, 'reportMonth']
+        # calc prior period assuming we're not crossing year boundary
+        prior_year = current_year
+        prior_month = current_month - 1
+        # Adjust prior month and year if it crosses a year boundary
+        if prior_month < 1 :
+            prior_month = 12
+            prior_year = current_year - 1
+        dropsAdds = getDropsAdds(prior_year, prior_month,
+                                 current_year, current_month, conn)
+        
+    pass                       
+    # return df
+
 
 if __name__ == "__main__" : main()
