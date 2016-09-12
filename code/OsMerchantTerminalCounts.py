@@ -33,7 +33,8 @@ def main():
         print("{} table already exists.".format(report_table_name))
     # Table is created. Now create dataframs and populate the merchant
     # and terminal drop rates.
-    df = addDropRateColumns(conn)
+    df = getDropsAddsReport(conn)
+    df.to_csv("../data/OsMerchantTerminalDropsAdds.csv")
     print(df)
     
 def dev_init() :
@@ -105,11 +106,13 @@ def getUniques(year, month, conn, select_type="merchantId",
     
 
 def getDropsAdds(year0, month0, year1, month1, conn) :
-    """ Returns a 4-tuple with the following contents:
+    """ Returns a 6-tuple with the following contents:
     result[0] - number of merchants dropped from month0 to month1
     result[1] - number of merchants added from month0 to month1
     result[2] - number of terminals dropped from month0 to month1
     result[3] - number of terminals added from month0 to month1
+    result[4] - merchant drops as percent prior month merchants
+    result[5] - terminal drops as percent prior month merchants
     
     year0 - the year of the prior month. Will be the same as the current
             year except when the current month = 1 (January)
@@ -121,20 +124,58 @@ def getDropsAdds(year0, month0, year1, month1, conn) :
     table - table name were holding all the monthly merchant report records
             default value = merchants_report_records
     """
-    dropped_merchants = list(set(getUniques(year0, month0, conn)) - \
-                             set(getUniques(year1, month1, conn)))
-    added_merchants = list(set(getUniques(year1, month1, conn)) - \
-                           set(getUniques(year0, month0, conn)))
-    dropped_terminals = list(set(getUniques(year0, month0, conn, \
-                                 "terminalId")) - \
-                             set(getUniques(year1, month1, conn, "terminalId")))
-    added_terminals = list(set(getUniques(year1, month1, conn, \
-                                 "terminalId")) - \
-                           set(getUniques(year0, month0, conn, "terminalId")))
+    dropped_merchants = len(list(set(getUniques(year0, month0, conn)) - \
+                                 set(getUniques(year1, month1, conn))))
+    added_merchants = len(list(set(getUniques(year1, month1, conn)) - \
+                               set(getUniques(year0, month0, conn))))
+    dropped_terminals = len(list(set(getUniques(year0, month0, conn, \
+                                     "terminalId")) - \
+                                 set(getUniques(year1, month1, conn, \
+                                     "terminalId"))))
+    added_terminals = len(list(set(getUniques(year1, month1, conn, \
+                                   "terminalId")) - \
+                               set(getUniques(year0, month0, conn, \
+                                   "terminalId"))))
+    frac_merch_drops = dropped_merchants / \
+                       len(getUniques(year0, month0, conn))
+    frac_term_drops = dropped_terminals / \
+                       len(getUniques(year0, month0, conn, "terminalId"))
     
-    return (dropped_merchants, added_merchants, dropped_terminals, added_terminals)
+    return (dropped_merchants, added_merchants,
+            dropped_terminals, added_terminals,
+            frac_merch_drops, frac_term_drops)
+    
+def populateAddsDropsMersTers(mer_ter_df, conn) :
+    """ Populates the drops, adds and drop_rate columns in the mer_ter_df
+    dataframe. This function expect there to be the following 
+    
+    A dropped merchant is one that had a merchantId in the immediately
+    preceding month which was absent in the current month. Similar for a
+    dropped terminal: terminalId existed in prior but not current month
+    """
+    df = mer_ter_df
+    for i in range(1, len(df)) :
+        current_year = df.ix[i, 'reportYear']
+        current_month = df.ix[i, 'reportMonth']
+        # calc prior period assuming we're not crossing year boundary
+        prior_year = current_year
+        prior_month = current_month - 1
+        # Adjust prior month and year if it crosses a year boundary
+        if prior_month < 1 :
+            prior_month = 12
+            prior_year = current_year - 1
+        dropsAdds = getDropsAdds(prior_year, prior_month,
+                                 current_year, current_month, conn)
+        df.set_value(i, 'merchant_drops', dropsAdds[0])
+        df.set_value(i, 'merchant_adds', dropsAdds[1])
+        df.set_value(i, 'terminal_drops', dropsAdds[2])
+        df.set_value(i, 'terminal_adds', dropsAdds[3])
+        df.set_value(i, 'merchant_drop_rate', dropsAdds[4])
+        df.set_value(i, 'terminal_drop_rate', dropsAdds[5])
+        
+    return df
 
-def populateDropAddColumns(conn, table_name='osMonthlyMerchantsTerminals') :
+def getDropsAddsReport(conn, table_name='osMonthlyMerchantsTerminals') :
     """ Builds and returns a dataframe with the following columns:
     yearFrac - float in the form yyyy.xx where xx is in 1/12 increments
                which should make it suitable for scatter plotting
@@ -150,41 +191,15 @@ def populateDropAddColumns(conn, table_name='osMonthlyMerchantsTerminals') :
     # cur = conn.cursor()
     df = pd.read_sql_query("SELECT * from " + table_name, conn)
     # Add new columns and init to a recognizably unmodified value.
-    df['merchant_adds'] = None
     df['merchant_drops'] = None
-    df['terminal_adds'] = None
+    df['merchant_adds'] = None
     df['terminal_drops'] = None
+    df['terminal_adds'] = None
     df['merchant_drop_rate'] = None
     df['terminal_drop_rate'] = None
     # Populate the values of above 4 created columns.
-    # df = populateAddsDropsMersTers(df, conn)
+    df = populateAddsDropsMersTers(df, conn)
     
     return df
-    
-def populateAddsDropsMersTers(mer_ter_df, conn) :
-    """ Populates the drops, adds and drop_rate columns in the mer_ter_df
-    dataframe. This function expect there to be the following 
-    
-    A dropped merchant is one that had a merchantId in the immediately
-    preceding month which was absent in the current month. Similar for a
-    dropped terminal: terminalId existed in prior but not current month
-    """
-    
-    for i in range(1, len(mer_ter_df)) :
-        current_year = mer_ter_df.ix[i, 'reportYear']
-        current_month = mer_ter_df.ix[i, 'reportMonth']
-        # calc prior period assuming we're not crossing year boundary
-        prior_year = current_year
-        prior_month = current_month - 1
-        # Adjust prior month and year if it crosses a year boundary
-        if prior_month < 1 :
-            prior_month = 12
-            prior_year = current_year - 1
-        dropsAdds = getDropsAdds(prior_year, prior_month,
-                                 current_year, current_month, conn)
-        
-    pass                       
-    # return df
-
 
 if __name__ == "__main__" : main()
