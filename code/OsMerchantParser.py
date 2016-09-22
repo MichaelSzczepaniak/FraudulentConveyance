@@ -14,7 +14,7 @@ dateToken = "Date"
 def usage():
     msg = """
     OsMerchantParser.py : reads all the monthly Open Solutions monthly merchant
-    reports, parses them into raw merchant chuncks and  parses those chuncks
+    reports, parses them into raw merchant chuncks and  parses those chunks
     into merchant report records.  To run from ipython:
     
     run OsMerchantParser.py <path to Open Solutions text reports>
@@ -28,7 +28,7 @@ def usage():
 def main():
     """ Iterates through data dir, reads each OS monthly merchant report file,
     parses that file into OsMerchant objects, and then persists those objects
-    into a database.  The path to the data dir needs to passed as the first
+    into a database.  The path to the data dir needs to be passed as the first
     argument. For example:
     
     run OsMerchantParser.py ../data/rawOsMerchantReportsTxt/
