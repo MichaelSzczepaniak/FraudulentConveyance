@@ -111,7 +111,7 @@ def buildInsertCommand(table_name = "merchants_report_records",
     return insert_command
             
 def persistMerchantRecord(data_base, mrec, table_name = "merchants_report_records"):
-    """ Persists mrec into table table_name in data base data_bases.
+    """ Persists mrec into table table_name in data base data_base.
     """
     insert_command = buildInsertCommand()
     data_base.execute(insert_command, mrec.asTuple())
