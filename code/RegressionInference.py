@@ -51,31 +51,31 @@ def compareTwoRegSlopes(x1, y1, x2, y2, alpha=0.05, tail_type="both"):
     result['w0_2'] = trainLinear(x2, y2)[0][0]
     result['w1_1'] = trainLinear(x1, y1)[1][0]
     result['w1_2'] = trainLinear(x2, y2)[1][0]
-    # result['sx1'] = np.std(x1, ddof=1)
-    # result['sx2'] = np.std(x2, ddof=1)
-    # result['sy1'] = np.std(y1, ddof=1)
-    # result['sy2'] = np.std(y2, ddof=1)
-    # result['r2_1'] = np.corrcoef(x1.T, y1.T)[1][0]**2
-    # result['r2_2'] = np.corrcoef(x2.T, y2.T)[1][0]**2
-    # result['syx1'] = result['sy1'] * np.sqrt((1-result['r2_1'])*
-                     # (result['n1']-1)/(result['n1']-2))
-    # result['syx2'] = result['sy2'] * np.sqrt((1-result['r2_2'])*
-                     # (result['n2']-1)/(result['n2']-2))
-    # result['sw1_1'] = result['syx1'] / \
-                      # (result['sx1'] * np.sqrt(result['n1']-1))
-    # result['sw1_2'] = result['syx2'] / \
-                      # (result['sx2'] * np.sqrt(result['n2']-1))
-    # result['s_slope_diff'] = np.sqrt(result['sw1_1']**2 + result['sw1_2']**2)
-    # result['t_stat'] = (result['w1_1'] - result['w1_2']) / \
-                       # result['s_slope_diff']
-    # result['df'] = result['n1'] + result['n2'] - 4
-    # if tail_type == 'right':
-        # result['p_val'] = 1 - ss.t.cdf(abs(result['t_stat'], result['df']))
-    # else:
-        # result['p_val'] = ss.t.cdf(result['t_stat'], result['df'])
-        # if tail_type == 'both':
-            # result['p_val'] += result['p_val']
-        # result['sig'] = (result['p_val'] <= alpha)
+    result['sx1'] = np.std(x1, ddof=1)
+    result['sx2'] = np.std(x2, ddof=1)
+    result['sy1'] = np.std(y1, ddof=1)
+    result['sy2'] = np.std(y2, ddof=1)
+    result['r2_1'] = np.corrcoef(x1.T, y1.T)[1][0]**2
+    result['r2_2'] = np.corrcoef(x2.T, y2.T)[1][0]**2
+    result['syx1'] = result['sy1'] * np.sqrt((1-result['r2_1'])*
+                     (result['n1']-1)/(result['n1']-2))
+    result['syx2'] = result['sy2'] * np.sqrt((1-result['r2_2'])*
+                     (result['n2']-1)/(result['n2']-2))
+    result['sw1_1'] = result['syx1'] / \
+                      (result['sx1'] * np.sqrt(result['n1']-1))
+    result['sw1_2'] = result['syx2'] / \
+                      (result['sx2'] * np.sqrt(result['n2']-1))
+    result['s_slope_diff'] = np.sqrt(result['sw1_1']**2 + result['sw1_2']**2)
+    result['t_stat'] = (result['w1_1'] - result['w1_2']) / \
+                       result['s_slope_diff']
+    result['df'] = result['n1'] + result['n2'] - 4
+    if tail_type == 'right':
+        result['p_val'] = 1 - ss.t.cdf(abs(result['t_stat'], result['df']))
+    else:
+        result['p_val'] = ss.t.cdf(result['t_stat'], result['df'])
+        if tail_type == 'both':
+            result['p_val'] += result['p_val']
+        result['sig'] = (result['p_val'] <= alpha)
     
     return result
     
